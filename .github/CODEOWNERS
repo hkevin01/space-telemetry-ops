@@ -1,0 +1,24 @@
+* @space-ops-team
+
+# Core services
+/src/services/ @backend-team @security-team
+/src/app-frontend/ @frontend-team
+
+# Infrastructure
+/infra/ @devops-team @security-team
+/infra/k8s/ @kubernetes-team @security-team
+
+# Security and compliance
+/security/ @security-team
+/.github/workflows/ @devops-team @security-team
+
+# Documentation
+/docs/ @tech-writers @architects
+
+# Configuration
+/.vscode/ @dev-tools-team
+/.copilot/ @dev-tools-team
+
+# Critical mission files
+/src/services/api-fastapi/app/routers/telemetry.py @mission-ops @backend-team
+/src/services/ingest-node/src/telemetry.ts @mission-ops @backend-team

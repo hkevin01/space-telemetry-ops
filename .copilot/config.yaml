@@ -1,0 +1,40 @@
+workspace:
+  name: "space-telemetry-ops"
+  description: "Space Telemetry Operations System"
+
+suggestions:
+  # Enhanced suggestions for space/aerospace domain
+  domain_keywords:
+    - "telemetry"
+    - "spacecraft"
+    - "satellite"
+    - "mission"
+    - "orbital"
+    - "ground_station"
+    - "downlink"
+    - "uplink"
+
+  # Code patterns to prioritize
+  patterns:
+    - error_handling: "comprehensive"
+    - logging: "detailed"
+    - type_safety: "strict"
+    - security: "high"
+
+  # File-specific configurations
+  files:
+    "*.py":
+      style: "google"
+      docstrings: "numpy"
+      type_hints: "required"
+    "*.ts":
+      style: "prettier"
+      strict_mode: true
+    "*.yaml":
+      validation: true
+
+context:
+  project_type: "space_systems"
+  security_level: "high"
+  availability_requirement: "99.9%"
+  performance_critical: true
