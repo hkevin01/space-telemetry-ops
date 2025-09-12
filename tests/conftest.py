@@ -14,9 +14,20 @@ sys.path.insert(0, str(project_root))
 def test_app():
     """Create a test FastAPI app instance."""
     try:
-        from src.services.api_fastapi.app.main import app
-        return app
-    except ImportError:
+        # Handle the directory name with hyphen by adding to sys.path
+        import importlib.util
+        import sys
+        from pathlib import Path
+
+        main_py_path = Path(__file__).parent.parent / "src" / "services" / "api-fastapi" / "app" / "main.py"
+        if main_py_path.exists():
+            spec = importlib.util.spec_from_file_location("main", main_py_path)
+            main_module = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(main_module)
+            return main_module.app
+        else:
+            raise ImportError("FastAPI app not found")
+    except (ImportError, Exception):
         # Return a mock app if the real one isn't available
         from fastapi import FastAPI
         mock_app = FastAPI()
