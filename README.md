@@ -1,7 +1,7 @@
 # 🛰️ Space Telemetry Operations System
 
-[![Build Status](https://github.com/space-telemetry-ops/main/workflows/CI-CD/badge.svg)](https://github.com/space-telemetry-ops/main/actions)
-[![Security Scan](https://github.com/space-telemetry-ops/main/workflows/Security/badge.svg)](https://github.com/space-telemetry-ops/main/actions)
+[![Build Status](https://github.com/hkevin01/space-telemetry-ops/workflows/CI-CD/badge.svg)](https://github.com/hkevin01/space-telemetry-ops/actions)
+[![Security Scan](https://github.com/hkevin01/space-telemetry-ops/workflows/Security/badge.svg)](https://github.com/hkevin01/space-telemetry-ops/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![NIST SP 800-53](https://img.shields.io/badge/Security-NIST%20SP%20800--53-blue.svg)](https://csrc.nist.gov/publications/detail/sp/800-53/rev-5/final)
 
@@ -428,6 +428,165 @@ graph LR
     VECTOR --> ML
 ```
 
+#### Understanding Our Data Architecture Components
+
+##### 🔥 **Redis: The Mission-Critical Memory Engine**
+
+**What Redis Is:**
+Redis (Remote Dictionary Server) is an in-memory data structure store that serves as our high-performance database, cache, and message broker. In our space telemetry system, Redis acts as the critical first line of data processing.
+
+**Why Redis is Essential for Space Operations:**
+
+- **Sub-millisecond Response Times**: Critical for real-time spacecraft monitoring where delays could impact mission safety
+- **High Throughput**: Handles 50,000+ telemetry messages per second from multiple spacecraft simultaneously
+- **Atomic Operations**: Ensures data consistency during concurrent access from multiple ground stations
+- **Pub/Sub Messaging**: Enables real-time alerts and notifications for mission-critical events
+- **Data Persistence**: Provides configurable durability options to prevent telemetry data loss
+
+**Redis Use Cases in Our System:**
+
+| Use Case | Implementation | Mission Impact |
+|----------|----------------|----------------|
+| **Real-time Telemetry Cache** | Store latest sensor readings | <1ms access to current spacecraft status |
+| **Message Queue** | Buffer incoming telemetry packets | Handles burst traffic during mission events |
+| **Session Management** | Store user authentication tokens | Secure, fast access for mission controllers |
+| **Rate Limiting** | Prevent system overload | Protects against telemetry data floods |
+| **Pub/Sub Alerts** | Real-time anomaly notifications | Instant alerts for critical system status |
+
+##### 🌡️ **Data Temperature Paths: Optimizing for Performance & Cost**
+
+Our system employs a **temperature-based data architecture** that automatically routes telemetry data based on access patterns and operational requirements:
+
+##### 🔥 **Hot Path - Real-time Operations (Milliseconds)**
+
+**Purpose**: Immediate access to live telemetry data for real-time decision making
+
+**Technologies**: Redis + Message Queues
+**Data Retention**: Last 15 minutes to 1 hour
+**Access Pattern**: Continuous reads/writes, sub-millisecond latency
+**Use Cases**:
+
+- Live spacecraft telemetry monitoring
+- Real-time anomaly detection and alerting
+- Mission control dashboard updates
+- Immediate command verification
+- Emergency response coordination
+
+**Performance Characteristics**:
+
+- **Latency**: <1ms response time
+- **Throughput**: 50,000+ operations/second
+- **Availability**: 99.999% uptime requirement
+- **Consistency**: Immediate consistency for safety-critical data
+
+##### 🟡 **Warm Path - Operational Data (Seconds to Hours)**
+
+**Purpose**: Frequently accessed operational data for analysis and reporting
+
+**Technologies**: PostgreSQL with optimized indexes
+**Data Retention**: 24 hours to 30 days
+**Access Pattern**: High-frequency queries, moderate latency acceptable
+**Use Cases**:
+
+- Telemetry trend analysis
+- System performance monitoring
+- Operational reporting and dashboards
+- Mission planning data
+- Historical comparisons for current operations
+
+**Performance Characteristics**:
+
+- **Latency**: <50ms query response
+- **Throughput**: 10,000+ queries/second
+- **Storage**: Optimized for structured queries
+- **Indexing**: Multi-dimensional indexes for complex telemetry queries
+
+##### 🧊 **Cold Path - Historical Archives (Long-term Storage)**
+
+**Purpose**: Long-term storage for compliance, research, and deep analysis
+
+**Technologies**: MinIO object storage with compression
+**Data Retention**: 7+ years (mission lifecycle + compliance)
+**Access Pattern**: Infrequent access, batch processing acceptable
+**Use Cases**:
+
+- Mission post-analysis and lessons learned
+- Regulatory compliance and auditing
+- Scientific research and data mining
+- Long-term trend analysis
+- Backup and disaster recovery
+
+**Performance Characteristics**:
+
+- **Latency**: Seconds to minutes for retrieval
+- **Cost**: 90% lower storage cost than hot/warm paths
+- **Durability**: 99.999999999% (11 9's) data durability
+- **Compression**: 80%+ size reduction for long-term efficiency
+
+##### 📊 **Analytics Path - Intelligence & Insights**
+
+**Purpose**: Advanced analytics, machine learning, and predictive insights
+
+**Technologies**: Vector databases + ML pipelines
+**Data Source**: All temperature paths (real-time + historical)
+**Processing**: Batch and streaming analytics
+**Use Cases**:
+
+- Predictive maintenance algorithms
+- Anomaly pattern recognition
+- Mission optimization recommendations
+- Spacecraft performance modeling
+- Risk assessment and early warning systems
+
+**Analytics Capabilities**:
+
+- **Machine Learning**: Automated pattern detection in telemetry streams
+- **Predictive Analytics**: Forecast potential system failures
+- **Statistical Analysis**: Performance trending and optimization
+- **Data Mining**: Discovery of operational insights from historical data
+
+#### Data Flow Temperature Transition
+
+```mermaid
+graph TB
+    subgraph "Data Temperature Lifecycle"
+        A[New Telemetry] --> B[Hot Path: Redis<br/>0-15 minutes]
+        B --> C[Warm Path: PostgreSQL<br/>15 minutes - 30 days]
+        C --> D[Cold Path: MinIO<br/>30 days - 7+ years]
+
+        B --> E[Analytics Path: Vector DB<br/>Real-time ML Processing]
+        C --> E
+        D --> E
+    end
+
+    subgraph "Performance Characteristics"
+        F["Hot: <1ms latency<br/>High cost, Critical data"]
+        G["Warm: <50ms latency<br/>Medium cost, Operational data"]
+        H["Cold: >1s latency<br/>Low cost, Archive data"]
+        I["Analytics: Variable latency<br/>ML insights, Predictions"]
+    end
+
+    B -.-> F
+    C -.-> G
+    D -.-> H
+    E -.-> I
+```
+
+#### Why This Architecture Matters for Space Operations
+
+**🎯 Mission Success**: Each temperature path serves specific operational needs:
+
+- **Hot Path**: Ensures real-time safety monitoring and immediate response capability
+- **Warm Path**: Supports operational efficiency with quick access to recent data
+- **Cold Path**: Maintains compliance and enables long-term mission analysis
+- **Analytics Path**: Provides predictive insights to prevent failures and optimize performance
+
+**💰 Cost Optimization**: Automatic data lifecycle management reduces storage costs by 70-90% while maintaining performance where needed
+
+**🔒 Reliability**: Multi-tier architecture provides redundancy and ensures no single point of failure can compromise mission data
+
+**📈 Scalability**: Each path can scale independently based on specific performance and capacity requirements
+
 #### Security & Compliance Framework
 
 | Security Layer | Implementation | Standards |
@@ -844,16 +1003,21 @@ graph LR
 Our development workflow follows GitFlow principles with emphasis on quality, security, and collaboration. Each phase contributes to the overall mission of delivering reliable space telemetry operations.
 
 ```mermaid
-gitgraph
-    commit id: "main-stable"
-    branch feature/new-capability
-    checkout feature/new-capability
-    commit id: "implement-core"
-    commit id: "add-tests"
-    commit id: "update-docs"
-    checkout main
-    merge feature/new-capability
-    commit id: "release-v1.1"
+graph LR
+    A[main branch] --> B[create feature branch]
+    B --> C[implement core functionality]
+    C --> D[add comprehensive tests]
+    D --> E[update documentation]
+    E --> F[create pull request]
+    F --> G[code review & CI/CD]
+    G --> H[merge to main]
+    H --> I[tag release]
+    I --> J[deploy to production]
+
+    style A fill:#e1f5fe
+    style H fill:#e8f5e8
+    style I fill:#fff3e0
+    style J fill:#fce4ec
 ```
 
 #### Workflow Phases Explained
