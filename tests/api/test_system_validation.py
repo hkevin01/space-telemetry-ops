@@ -16,11 +16,11 @@ def test_python_version():
 def test_project_structure():
     """Test that basic project structure exists."""
     project_root = Path(__file__).parent.parent.parent
-    
+
     # Core directories should exist
     assert (project_root / "src").exists(), "src directory missing"
     assert (project_root / "tests").exists(), "tests directory missing"
-    
+
     # FastAPI app should exist
     fastapi_main = project_root / "src" / "services" / "api-fastapi" / "app" / "main.py"
     assert fastapi_main.exists(), "FastAPI main.py missing"
@@ -29,7 +29,7 @@ def test_environment_variables():
     """Test that required environment variables are set in CI."""
     # These should be set in the GitHub Actions workflow
     expected_vars = ["PYTHONPATH"]
-    
+
     for var in expected_vars:
         if var in os.environ:
             print(f"✓ {var} = {os.environ[var]}")
@@ -71,7 +71,7 @@ def test_mission_readiness_placeholder():
         "health_monitoring": True,
         "alert_system": True
     }
-    
+
     for system, status in mission_systems.items():
         assert status, f"Mission system {system} not ready"
 
@@ -79,13 +79,13 @@ def test_ci_environment():
     """Test CI/CD environment configuration."""
     # Check if we're in GitHub Actions
     is_github_actions = os.getenv("GITHUB_ACTIONS") == "true"
-    
+
     if is_github_actions:
         print("✓ Running in GitHub Actions")
         assert os.getenv("RUNNER_OS") is not None
         assert os.getenv("GITHUB_WORKSPACE") is not None
     else:
         print("⚠ Not running in GitHub Actions (local execution)")
-    
+
     # These tests should pass in any environment
     assert True

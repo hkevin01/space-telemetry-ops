@@ -18,7 +18,7 @@ def test_app():
         import importlib.util
         import sys
         from pathlib import Path
-        
+
         main_py_path = Path(__file__).parent.parent / "src" / "services" / "api-fastapi" / "app" / "main.py"
         if main_py_path.exists():
             spec = importlib.util.spec_from_file_location("main", main_py_path)
