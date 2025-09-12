@@ -3,7 +3,7 @@ Space Telemetry Operations - FastAPI Backend
 
 Main application entry point for the space telemetry operations system.
 Provides REST API endpoints for telemetry data access, mission management,
-and system monitoring.
+and system monitoring with enhanced dashboard capabilities.
 """
 
 from fastapi import FastAPI, HTTPException, Depends, Security
@@ -11,6 +11,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.middleware.gzip import GZipMiddleware
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from fastapi.responses import JSONResponse
+from fastapi.staticfiles import StaticFiles
 from contextlib import asynccontextmanager
 from typing import List, Optional, Dict, Any
 import asyncio
@@ -25,6 +26,15 @@ from prometheus_client import Counter, Histogram, generate_latest, CONTENT_TYPE_
 from starlette.responses import Response
 from starlette.middleware.base import BaseHTTPMiddleware
 from starlette.requests import Request
+
+# Import dashboard enhancement services
+from ...services.dashboard_enhancement.api import router as dashboard_router
+from ...services.dashboard_enhancement.integration import (
+    DashboardIntegrationService,
+    dashboard_integration_service
+)
+from ...services.anomaly_detection.anomaly_detection import AnomalyDetectionService
+from ...services.performance_optimization.performance_service import PerformanceOptimizationService
 
 # Configure logging
 logging.basicConfig(
@@ -92,17 +102,19 @@ class MetricsMiddleware(BaseHTTPMiddleware):
 
         return response
 
-# Global variables for connections
+# Global variables for connections and services
 redis_pool = None
 postgres_pool = None
+anomaly_service = None
+performance_service = None
 app_start_time = time.time()
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     """Application lifespan management"""
-    global redis_pool, postgres_pool
+    global redis_pool, postgres_pool, anomaly_service, performance_service
 
-    logger.info("Starting Space Telemetry API...")
+    logger.info("Starting Space Telemetry API with Enhanced Dashboard...")
 
     # Initialize Redis connection
     try:
@@ -132,10 +144,58 @@ async def lifespan(app: FastAPI):
         logger.error(f"Failed to connect to PostgreSQL: {e}")
         postgres_pool = None
 
+    # Initialize enhanced services
+    try:
+        # Initialize anomaly detection service
+        anomaly_service = AnomalyDetectionService()
+        await anomaly_service.initialize()
+        logger.info("Anomaly detection service initialized")
+
+        # Initialize performance optimization service
+        performance_service = PerformanceOptimizationService()
+        await performance_service.initialize()
+        logger.info("Performance optimization service initialized")
+
+        # Initialize dashboard integration service
+        await dashboard_integration_service.initialize(
+            anomaly_service=anomaly_service,
+            performance_service=performance_service,
+            telemetry_processor=None  # Would be connected to actual processor
+        )
+        await dashboard_integration_service.start()
+        logger.info("Dashboard integration service started")
+
+    except Exception as e:
+        logger.error(f"Failed to initialize enhanced services: {e}")
+
     yield
 
     # Cleanup
     logger.info("Shutting down Space Telemetry API...")
+
+    # Stop enhanced services
+    if 'dashboard_integration_service' in globals():
+        try:
+            await dashboard_integration_service.stop()
+            logger.info("Dashboard integration service stopped")
+        except Exception as e:
+            logger.error(f"Error stopping dashboard service: {e}")
+
+    if anomaly_service:
+        try:
+            await anomaly_service.stop()
+            logger.info("Anomaly detection service stopped")
+        except Exception as e:
+            logger.error(f"Error stopping anomaly service: {e}")
+
+    if performance_service:
+        try:
+            await performance_service.stop()
+            logger.info("Performance optimization service stopped")
+        except Exception as e:
+            logger.error(f"Error stopping performance service: {e}")
+
+    # Cleanup database connections
     if redis_pool:
         await redis_pool.disconnect()
     if postgres_pool:
@@ -144,7 +204,7 @@ async def lifespan(app: FastAPI):
 # Create FastAPI application
 app = FastAPI(
     title="Space Telemetry Operations API",
-    description="Enterprise-grade REST API for space telemetry data management",
+    description="Enterprise-grade REST API for space telemetry data management with Enhanced Mission Control Dashboard",
     version="1.0.0",
     docs_url="/docs",
     redoc_url="/redoc",
@@ -161,6 +221,18 @@ app.add_middleware(
 )
 app.add_middleware(GZipMiddleware, minimum_size=1000)
 app.add_middleware(MetricsMiddleware)
+
+# Include enhanced dashboard API routes
+app.include_router(dashboard_router, tags=["Enhanced Mission Control Dashboard"])
+
+# Mount static files for dashboard frontend (optional - can be served separately)
+try:
+    app.mount("/dashboard", StaticFiles(directory="../../services/dashboard-enhancement/static", html=True), name="dashboard")
+    logger.info("Dashboard static files mounted at /dashboard")
+except Exception as e:
+    logger.warning(f"Could not mount dashboard static files: {e}")
+
+logger.info("Enhanced Mission Control Dashboard API integration complete")
 
 # Dependency to get database connections
 async def get_redis():
