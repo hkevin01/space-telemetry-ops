@@ -1,0 +1,27 @@
+name: Test Workflow Status
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+
+jobs:
+  test-basic:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Basic validation
+      run: |
+        echo "Repository: ${{ github.repository }}"
+        echo "Workflow name from main CI/CD: $(cat .github/workflows/ci-cd.yml | grep '^name:' | head -1)"
+        echo "Current branch: ${{ github.ref_name }}"
+        echo "Event: ${{ github.event_name }}"
+
+        echo "Checking if CI/CD workflow file is valid YAML..."
+        cat .github/workflows/ci-cd.yml | head -20
+
+        echo "Badge should point to:"
+        echo "https://github.com/${{ github.repository }}/workflows/CI%2FCD%20Pipeline/badge.svg"

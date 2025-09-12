@@ -18,7 +18,7 @@ def test_app():
         import importlib.util
         import sys
         from pathlib import Path
-
+        
         main_py_path = Path(__file__).parent.parent / "src" / "services" / "api-fastapi" / "app" / "main.py"
         if main_py_path.exists():
             spec = importlib.util.spec_from_file_location("main", main_py_path)
@@ -46,7 +46,40 @@ def test_app():
 
         return mock_app
 
-@pytest.fixture
+@pytest.fixture(scope="session")
+def redis_available():
+    """Check if Redis is available for testing."""
+    import os
+    try:
+        import redis
+        r = redis.Redis(
+            host=os.getenv("REDIS_HOST", "localhost"),
+            port=int(os.getenv("REDIS_PORT", 6379)),
+            socket_connect_timeout=1
+        )
+        r.ping()
+        return True
+    except Exception:
+        return False
+
+@pytest.fixture(scope="session")
+def postgres_available():
+    """Check if PostgreSQL is available for testing."""
+    import os
+    try:
+        import psycopg2
+        conn = psycopg2.connect(
+            host=os.getenv("POSTGRES_HOST", "localhost"),
+            port=int(os.getenv("POSTGRES_PORT", 5432)),
+            user=os.getenv("POSTGRES_USER", "postgres"),
+            password=os.getenv("POSTGRES_PASSWORD", "postgres"),
+            dbname=os.getenv("POSTGRES_DB", "test_db"),
+            connect_timeout=2
+        )
+        conn.close()
+        return True
+    except Exception:
+        return False@pytest.fixture
 def client(test_app):
     """Create a test client."""
     from fastapi.testclient import TestClient
