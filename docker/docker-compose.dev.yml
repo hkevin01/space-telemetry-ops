@@ -1,0 +1,113 @@
+version: '3.8'
+
+services:
+  # Development Environment
+  redis-dev:
+    image: redis:7-alpine
+    container_name: telemetry-redis-dev
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_dev_data:/data
+    networks:
+      - telemetry-dev
+
+  postgres-dev:
+    image: postgres:15-alpine
+    container_name: telemetry-postgres-dev
+    environment:
+      POSTGRES_DB: telemetry_dev
+      POSTGRES_USER: dev_user
+      POSTGRES_PASSWORD: dev_pass
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_dev_data:/var/lib/postgresql/data
+      - ./postgres/init:/docker-entrypoint-initdb.d
+    networks:
+      - telemetry-dev
+
+  minio-dev:
+    image: minio/minio:latest
+    container_name: telemetry-minio-dev
+    environment:
+      MINIO_ROOT_USER: minioadmin
+      MINIO_ROOT_PASSWORD: minioadmin
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    volumes:
+      - minio_dev_data:/data
+    command: server /data --console-address ":9001"
+    networks:
+      - telemetry-dev
+
+  # Development Frontend with Hot Reload
+  frontend-dev:
+    build:
+      context: ../src/frontend
+      dockerfile: Dockerfile.dev
+    container_name: telemetry-frontend-dev
+    environment:
+      REACT_APP_API_URL: http://localhost:8083
+      REACT_APP_WS_URL: ws://localhost:8081
+      FAST_REFRESH: true
+    ports:
+      - "3000:3000"
+    volumes:
+      - ../src/frontend:/app
+      - /app/node_modules
+    networks:
+      - telemetry-dev
+
+  # Development Backend with Auto-reload
+  backend-dev:
+    build:
+      context: ../src/backend
+      dockerfile: Dockerfile.dev
+    container_name: telemetry-backend-dev
+    environment:
+      DATABASE_URL: postgresql://dev_user:dev_pass@postgres-dev:5432/telemetry_dev
+      REDIS_URL: redis://redis-dev:6379/0
+      DEBUG: true
+      RELOAD: true
+    ports:
+      - "8083:8000"
+    volumes:
+      - ../src/backend:/app
+    depends_on:
+      - postgres-dev
+      - redis-dev
+    networks:
+      - telemetry-dev
+
+  # Development Ingestion Service
+  ingestion-dev:
+    build:
+      context: ../src/services/ingest-node
+      dockerfile: Dockerfile.dev
+    container_name: telemetry-ingestion-dev
+    environment:
+      NODE_ENV: development
+      REDIS_HOST: redis-dev
+      DEBUG: "*"
+    ports:
+      - "8080:8080"
+      - "8081:8081"
+    volumes:
+      - ../src/services/ingest-node:/app
+      - /app/node_modules
+    depends_on:
+      - redis-dev
+    networks:
+      - telemetry-dev
+
+networks:
+  telemetry-dev:
+    driver: bridge
+    name: space-telemetry-dev
+
+volumes:
+  postgres_dev_data:
+  redis_dev_data:
+  minio_dev_data:

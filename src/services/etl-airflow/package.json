@@ -1,0 +1,42 @@
+{
+  "name": "space-telemetry-etl",
+  "version": "1.0.0",
+  "description": "Apache Airflow ETL service for space telemetry data processing",
+  "main": "dags/telemetry_pipeline.py",
+  "scripts": {
+    "install": "pip install -r requirements.txt",
+    "test": "python -m pytest tests/ -v",
+    "lint": "flake8 dags/ plugins/ tests/",
+    "format": "black dags/ plugins/ tests/",
+    "start": "airflow standalone",
+    "init-db": "airflow db init",
+    "create-user": "airflow users create --username admin --firstname Admin --lastname User --role Admin --email admin@example.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-org/space-telemetry-ops"
+  },
+  "keywords": [
+    "airflow",
+    "etl",
+    "telemetry",
+    "space",
+    "satellite",
+    "data-pipeline"
+  ],
+  "author": "Space Operations Team",
+  "license": "MIT",
+  "dependencies": {
+    "apache-airflow": ">=2.8.0",
+    "apache-airflow-providers-postgres": ">=5.7.0",
+    "apache-airflow-providers-redis": ">=3.4.0",
+    "apache-airflow-providers-docker": ">=3.9.0",
+    "apache-airflow-providers-http": ">=4.6.0"
+  },
+  "devDependencies": {
+    "pytest": ">=7.4.0",
+    "pytest-airflow": ">=0.1.0",
+    "flake8": ">=6.0.0",
+    "black": ">=23.0.0"
+  }
+}

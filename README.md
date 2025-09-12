@@ -1,7 +1,7 @@
 # 🛰️ Space Telemetry Operations System
 
-[![Build Status](https://github.com/hkevin01/space-telemetry-ops/workflows/CI-CD/badge.svg)](https://github.com/hkevin01/space-telemetry-ops/actions)
-[![Security Scan](https://github.com/hkevin01/space-telemetry-ops/workflows/Security/badge.svg)](https://github.com/hkevin01/space-telemetry-ops/actions)
+[![Build Status](https://github.com/hkevin01/space-telemetry-ops/workflows/CI%2FCD%20Pipeline/badge.svg)](https://github.com/hkevin01/space-telemetry-ops/actions)
+[![Security Scan](https://github.com/hkevin01/space-telemetry-ops/workflows/Security%20Scan/badge.svg)](https://github.com/hkevin01/space-telemetry-ops/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![NIST SP 800-53](https://img.shields.io/badge/Security-NIST%20SP%20800--53-blue.svg)](https://csrc.nist.gov/publications/detail/sp/800-53/rev-5/final)
 
