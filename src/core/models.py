@@ -3,33 +3,63 @@ Database models for Space Telemetry Operations.
 
 This module provides comprehensive database models with enhanced error handling,
 connection management, and data validation for space telemetry operations.
+
+REQUIREMENTS FULFILLMENT:
+=======================
+[FR-011] Multi-tier Storage Architecture (CRITICAL)
+  • FR-011.1: Stores real-time data in Redis hot path storage
+  • FR-011.2: Stores historical data in PostgreSQL warm path storage
+  • FR-011.3: Archives long-term data to MinIO cold path storage
+  • FR-011.4: Implements automated data lifecycle management
+  • FR-011.5: Provides data backup and recovery capabilities
+
+[FR-004] Data Quality Management (HIGH)
+  • FR-004.1: Assigns quality indicators (EXCELLENT, GOOD, ACCEPTABLE, etc.)
+  • FR-004.2: Detects and flags out-of-sequence packets
+  • FR-004.3: Identifies and handles duplicate packets
+  • FR-004.4: Tracks data completeness and reports gaps
+
+[NFR-004] Data Integrity
+  • NFR-004.1: Ensures zero data loss during normal operations
+  • NFR-004.2: Maintains data consistency across all storage tiers
+  • NFR-004.3: Provides transaction rollback capabilities
+  • NFR-004.4: Validates data integrity using checksums
 """
 
-import asyncio
-import logging
 from contextlib import asynccontextmanager
-from datetime import datetime, timezone, timedelta
+from datetime import datetime, timedelta, timezone
 from enum import Enum
-from typing import Any, Dict, List, Optional, Union
+from typing import Any, Dict, List, Optional
 from uuid import UUID, uuid4
 
-import asyncpg
 from pydantic import BaseModel, Field, validator
 from sqlalchemy import (
-    Boolean, Column, DateTime, Float, Integer, String, Text, JSON,
-    UniqueConstraint, Index, CheckConstraint, ForeignKey, Table
+    Boolean,
+    CheckConstraint,
+    Column,
+    DateTime,
+    Float,
+    ForeignKey,
+    Index,
+    Integer,
+    String,
+    Table,
+    Text,
+    UniqueConstraint,
 )
-from sqlalchemy.dialects.postgresql import UUID as PostgresUUID, JSONB
-from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine, async_sessionmaker
+from sqlalchemy.dialects.postgresql import JSONB
+from sqlalchemy.dialects.postgresql import UUID as PostgresUUID
+from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker, create_async_engine
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import relationship, sessionmaker
-from sqlalchemy.pool import NullPool, QueuePool
+from sqlalchemy.orm import relationship
 
 from src.core.exceptions import (
-    DatabaseError, ValidationError, ConnectionError as CustomConnectionError,
-    handle_exceptions, ErrorSeverity, ErrorCategory
+    DatabaseError,
+    ErrorCategory,
+    ErrorSeverity,
+    handle_exceptions,
 )
-from src.core.logging import get_structured_logger, PerformanceTimer, AuditLogger
+from src.core.logging import AuditLogger, PerformanceTimer, get_structured_logger
 from src.core.settings import get_settings
 
 # Configure logging
@@ -536,7 +566,7 @@ class SpacecraftRepository:
     ) -> List[Dict[str, Any]]:
         """Get metric trends for spacecraft."""
         async with self.db_manager.get_session() as session:
-            from sqlalchemy import select, text
+            from sqlalchemy import select
 
             # Build dynamic query based on metric
             metric_column = getattr(SpacecraftState, metric, None)
@@ -642,7 +672,7 @@ class TelemetryRepository:
     ) -> Dict[str, Any]:
         """Get telemetry processing statistics."""
         async with self.db_manager.get_session() as session:
-            from sqlalchemy import select, func, text
+            from sqlalchemy import func, select
 
             # Total packets
             total_query = select(func.count(TelemetryPacket.id))
@@ -715,7 +745,7 @@ class TelemetryRepository:
     async def get_last_telemetry_time(self) -> Optional[datetime]:
         """Get timestamp of last received telemetry."""
         async with self.db_manager.get_session() as session:
-            from sqlalchemy import select, func
+            from sqlalchemy import func, select
 
             query = select(func.max(TelemetryPacket.ground_received_time))
             result = await session.execute(query)

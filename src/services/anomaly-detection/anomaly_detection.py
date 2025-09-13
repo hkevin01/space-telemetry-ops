@@ -10,7 +10,7 @@ REQUIREMENTS FULFILLMENT:
 [FR-005] Real-time Anomaly Detection (CRITICAL)
   • FR-005.1: Achieves 99%+ accuracy through multi-algorithm ensemble approach
   • FR-005.2: Maintains <1% false positive rate via optimized thresholds
-  • FR-005.3: Detects anomalies within 100ms using streamlined processing 
+  • FR-005.3: Detects anomalies within 100ms using streamlined processing
   • FR-005.4: Supports multiple algorithms: statistical, temporal, behavioral
   • FR-005.5: Assigns severity levels (LOW, MEDIUM, HIGH, CRITICAL)
 
@@ -20,7 +20,7 @@ REQUIREMENTS FULFILLMENT:
   • FR-006.3: Generates recommended actions based on anomaly type and severity
   • FR-006.4: Maintains historical context through time-series analysis
 
-[NFR-001] Throughput Performance 
+[NFR-001] Throughput Performance
   • NFR-001.1: Processes 50K+ messages/second through parallel processing
   • NFR-001.4: Maintains <100ms response times for anomaly detection APIs
 
@@ -33,23 +33,22 @@ Target Performance:
 
 import asyncio
 import logging
+from abc import ABC, abstractmethod
+from dataclasses import dataclass, field
+from datetime import datetime, timedelta
+from enum import Enum
+from typing import Any, Dict, List, Optional
+
 import numpy as np
 import pandas as pd
-from datetime import datetime, timedelta
-from typing import Dict, List, Optional, Tuple, Any
-from dataclasses import dataclass, field
-from enum import Enum
-from abc import ABC, abstractmethod
 
 # Statistical libraries for anomaly detection
 from scipy import stats
 from sklearn.ensemble import IsolationForest
 from sklearn.preprocessing import StandardScaler
-from sklearn.cluster import DBSCAN
 
 # Core platform imports
 from ..core.telemetry import TelemetryPacket
-from ..core.models import Spacecraft
 
 
 class AnomalyType(Enum):

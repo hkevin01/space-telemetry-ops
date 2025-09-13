@@ -37,21 +37,18 @@ Features:
 import asyncio
 import json
 import logging
-from datetime import datetime, timedelta
-from typing import Dict, List, Optional, Any, Set
 from dataclasses import dataclass, field
+from datetime import datetime, timedelta
 from enum import Enum
+from typing import Any, Dict, List, Optional, Set
 
-from fastapi import APIRouter, WebSocket, WebSocketDisconnect, HTTPException, Depends, Query
-from fastapi.responses import JSONResponse
-from pydantic import BaseModel, Field
 import pandas as pd
-import numpy as np
+from fastapi import WebSocket
+from pydantic import BaseModel, Field
 
 # Internal imports
 from ...core.telemetry import TelemetryPacket
-from ...core.models import Spacecraft
-from ..anomaly_detection.anomaly_detection import AnomalyAlert, SeverityLevel
+from ..anomaly_detection.anomaly_detection import AnomalyAlert
 
 
 class ChartType(Enum):

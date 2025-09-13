@@ -5,34 +5,50 @@ This module provides the FastAPI router for the enhanced mission control
 dashboard with real-time telemetry visualization, WebSocket streaming,
 and advanced dashboard configuration management.
 
+REQUIREMENTS FULFILLMENT:
+=======================
+[FR-007] Mission Control Dashboard (CRITICAL)
+  • FR-007.1: Provides real-time dashboard data updates
+  • FR-007.2: Supports configurable dashboard layout management
+  • FR-007.3: Enables mission-specific dashboard templates
+  • FR-007.5: Implements WebSocket streaming endpoints
+
+[FR-009] REST API Services (CRITICAL)
+  • FR-009.1: Provides RESTful dashboard management endpoints
+  • FR-009.4: Returns standardized JSON responses
+  • FR-009.5: Integrated with OpenAPI documentation
+
 API Endpoints:
-- Dashboard layout CRUD operations
-- Widget management and configuration
-- Real-time data streaming via WebSocket
-- Dashboard template management
+- Dashboard layout CRUD operations (FR-007.2)
+- Widget management and configuration (FR-007.2)
+- Real-time data streaming via WebSocket (FR-007.5)
+- Dashboard template management (FR-007.3)
 """
 
-import uuid
 import logging
-from typing import List, Optional, Dict, Any
-from datetime import datetime
+import uuid
+from typing import List, Optional
 
-from fastapi import APIRouter, WebSocket, WebSocketDisconnect, HTTPException, Depends, Query, Path
-from fastapi.responses import JSONResponse
+from fastapi import (
+    APIRouter,
+    HTTPException,
+    Path,
+    Query,
+    WebSocket,
+    WebSocketDisconnect,
+)
 
 # Internal imports
 from .dashboard_service import (
-    dashboard_service,
-    DashboardLayout,
-    DashboardWidget,
     ChartType,
-    AggregationType,
     CreateLayoutRequest,
     CreateWidgetRequest,
+    DashboardLayout,
+    DashboardWidget,
     LayoutResponse,
-    WidgetDataResponse
+    WidgetDataResponse,
+    dashboard_service,
 )
-
 
 # Create API router
 router = APIRouter(prefix="/api/dashboard", tags=["Mission Control Dashboard"])

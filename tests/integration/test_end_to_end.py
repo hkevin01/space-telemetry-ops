@@ -4,32 +4,51 @@ Integration Tests - End-to-End Space Telemetry System
 Comprehensive integration tests covering the complete data flow from
 telemetry ingestion through all temperature paths (HOT, Warm, Cold, Analytics)
 and command processing. Tests real-world mission scenarios and system resilience.
+
+REQUIREMENTS VERIFICATION:
+========================
+[FR-003] Telemetry Processing Pipeline (CRITICAL)
+  • FR-003.1: Verifies end-to-end latency less than 100ms
+  • FR-003.2: Validates telemetry data against operational limits
+  • FR-003.3: Tests quality indicators on all processed data
+  • FR-003.4: Verifies concurrent processing of multiple spacecraft
+
+[NFR-001] Throughput Performance
+  • NFR-001.1: Tests sustained 50,000+ messages per second ingestion
+  • NFR-001.2: Validates 99.9% uptime during processing
+  • NFR-001.3: Tests concurrent operations from 100+ users
+  • NFR-001.4: Verifies <100ms response times for API queries
+
+[NFR-003] System Availability
+  • NFR-003.1: Tests 99.9% uptime availability
+  • NFR-003.2: Validates automatic failover mechanisms
+  • NFR-003.3: Tests graceful degradation under high load
+  • NFR-003.4: Verifies recovery from failures within 30 seconds
 """
 
 import asyncio
-import pytest
 import json
+import random
 import time
 from datetime import datetime, timedelta
-from typing import Dict, List, Any, Optional, Tuple
+from typing import Any, Dict, List
+
 import numpy as np
-import pandas as pd
-from concurrent.futures import ThreadPoolExecutor
-import redis
-import psycopg2
-import boto3
-from unittest.mock import Mock, AsyncMock
-import requests
-import threading
-import queue
-import random
+import pytest
+
+from ..commands.test_space_commands import (
+    CommandCategory,
+    CommandPriority,
+    CommandStatus,
+    SpaceCommand,
+    SpaceCommandProcessor,
+)
+from ..data_paths.test_analytics_path import AnalyticsPathTester
+from ..data_paths.test_cold_path import ColdPathTester
 
 # Import test components
-from ..data_paths.test_hot_path import HotPathTester, HOT_PATH_CONFIG
-from ..data_paths.test_warm_path import WarmPathTester, WARM_PATH_CONFIG
-from ..data_paths.test_cold_path import ColdPathTester, COLD_PATH_CONFIG
-from ..data_paths.test_analytics_path import AnalyticsPathTester, ANALYTICS_CONFIG
-from ..commands.test_space_commands import SpaceCommandProcessor, SpaceCommand, CommandPriority, CommandCategory, CommandStatus
+from ..data_paths.test_hot_path import HotPathTester
+from ..data_paths.test_warm_path import WarmPathTester
 
 # Integration test configuration
 INTEGRATION_CONFIG = {
@@ -575,7 +594,7 @@ class IntegrationTestSystem:
                     assert avg_duration <= target, f"Warm path average {avg_duration:.2f}ms exceeds target {target}ms"
 
         # Command execution analysis
-        print(f"\nCOMMAND EXECUTION:")
+        print("\nCOMMAND EXECUTION:")
         total_commands = 0
         successful_commands = 0
 
@@ -593,7 +612,7 @@ class IntegrationTestSystem:
         print(f"\nOVERALL COMMAND SUCCESS RATE: {overall_command_success:.3%}")
 
         # System throughput
-        print(f"\nSYSTEM THROUGHPUT:")
+        print("\nSYSTEM THROUGHPUT:")
         print(f"  Total telemetry ingested: {self.telemetry_ingested}")
         print(f"  Total commands executed: {total_commands}")
         print(f"  Ingestion rate: {INTEGRATION_CONFIG['telemetry_rate_hz']} Hz per satellite")
@@ -642,7 +661,7 @@ class TestEndToEndIntegration:
         assert ingestion_success_rate >= INTEGRATION_CONFIG["reliability_targets"]["data_ingestion_success_rate"]
         assert command_success_rate >= INTEGRATION_CONFIG["reliability_targets"]["command_success_rate"]
 
-        print(f"\n✅ Mission scenario completed successfully:")
+        print("\n✅ Mission scenario completed successfully:")
         print(f"  Data ingestion success rate: {ingestion_success_rate:.3%}")
         print(f"  Command execution success rate: {command_success_rate:.3%}")
         print(f"  Anomalies detected: {scenario.anomalies_detected}")
@@ -709,7 +728,7 @@ class TestEndToEndIntegration:
         assert emergency_response_time < INTEGRATION_CONFIG["performance_targets"]["hot_path_latency_ms"] * 100, \
             f"Emergency response time {emergency_response_time:.2f}ms too slow"
 
-        print(f"✅ Emergency response completed:")
+        print("✅ Emergency response completed:")
         print(f"  Response time: {emergency_response_time:.2f}ms")
         print(f"  Command status: {abort_command.status.value}")
 
@@ -757,7 +776,7 @@ class TestEndToEndIntegration:
 
             operations_per_second = total_operations / stress_duration
 
-            print(f"✅ Stress test completed:")
+            print("✅ Stress test completed:")
             print(f"  Duration: {stress_duration:.2f}s")
             print(f"  Total operations: {total_operations}")
             print(f"  Operations per second: {operations_per_second:.1f}")
@@ -809,11 +828,11 @@ class TestEndToEndIntegration:
         # For integration test, we verify it was stored
         assert len(integration_system.telemetry_processed["warm_path"]) > 0
 
-        print(f"✅ Data consistency verified:")
-        print(f"  Hot path: Data stored and retrievable")
-        print(f"  Warm path: Data processed for analytics")
-        print(f"  Cold path: Archival simulation completed")
-        print(f"  Analytics path: ML processing simulation completed")
+        print("✅ Data consistency verified:")
+        print("  Hot path: Data stored and retrievable")
+        print("  Warm path: Data processed for analytics")
+        print("  Cold path: Archival simulation completed")
+        print("  Analytics path: ML processing simulation completed")
 
     @pytest.mark.asyncio
     async def test_system_recovery_after_failure(self, integration_system):
@@ -864,7 +883,7 @@ class TestEndToEndIntegration:
         await integration_system._process_telemetry_through_paths(recovery_telemetry)
         recovery_duration = time.perf_counter() - recovery_start
 
-        print(f"✅ System recovery test completed:")
+        print("✅ System recovery test completed:")
         print(f"  Failure properly detected: {failure_handled}")
         print(f"  Failure detection time: {failure_duration * 1000:.2f}ms")
         print(f"  Recovery processing time: {recovery_duration * 1000:.2f}ms")

@@ -3,30 +3,42 @@ Main FastAPI application for Space Telemetry Operations.
 
 This module provides the main FastAPI application with comprehensive
 middleware, error handling, and API configuration.
+
+REQUIREMENTS FULFILLMENT:
+=======================
+[FR-009] REST API Services (CRITICAL)
+  • FR-009.1: Provides RESTful endpoints for telemetry data retrieval
+  • FR-009.2: Supports pagination for large dataset queries
+  • FR-009.3: Provides filtering by time range, spacecraft, and mission
+  • FR-009.4: Returns responses in standardized JSON format
+  • FR-009.5: Provides OpenAPI 3.0 documentation via /docs endpoint
+
+[NFR-005] Authentication and Authorization
+  • NFR-005.3: Encrypts data transmissions using TLS 1.3
+  • NFR-005.4: Logs all security-related events
+
+[NFR-008] System Maintenance
+  • NFR-008.2: Provides comprehensive logging and monitoring
+  • NFR-008.3: Supports configuration changes without restart
 """
 
-import asyncio
 import time
 from contextlib import asynccontextmanager
 from datetime import datetime, timezone
-from typing import Any, Dict, List
 
-from fastapi import FastAPI, Request, HTTPException, Depends
+import uvicorn
+from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.middleware.gzip import GZipMiddleware
 from fastapi.middleware.trustedhost import TrustedHostMiddleware
-from fastapi.responses import JSONResponse
 from fastapi.openapi.utils import get_openapi
+from fastapi.responses import JSONResponse
 from prometheus_fastapi_instrumentator import Instrumentator
-import uvicorn
 
 from src.api.routers import main_router
-from src.core.models import init_database, create_all_tables, close_database
-from src.core.exceptions import (
-    DatabaseError, ValidationError, NotFoundError,
-    ErrorSeverity, ErrorCategory
-)
-from src.core.logging import get_structured_logger, PerformanceTimer, AuditLogger
+from src.core.exceptions import DatabaseError, NotFoundError, ValidationError
+from src.core.logging import AuditLogger, get_structured_logger
+from src.core.models import close_database, create_all_tables, init_database
 from src.core.settings import get_settings
 from src.core.telemetry import TelemetryProcessor
 

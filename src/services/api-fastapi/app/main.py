@@ -26,12 +26,12 @@ REQUIREMENTS FULFILLMENT:
   • NFR-005.3: Encrypts data transmissions using TLS 1.3
 """
 
-from fastapi import FastAPI, HTTPException
-from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse
-import uvicorn
 import os
 from datetime import datetime
+
+import uvicorn
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(
     title="Space Telemetry Operations API",
