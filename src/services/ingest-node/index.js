@@ -1,3 +1,32 @@
+/*
+High-Throughput Telemetry Data Ingestion Service
+
+REQUIREMENTS FULFILLMENT:
+=======================
+[FR-001] Telemetry Data Ingestion (CRITICAL)
+  • FR-001.1: Accepts telemetry packets in CCSDS Space Packet Protocol format
+  • FR-001.2: Supports minimum sustained ingestion rate of 50,000 msgs/sec
+  • FR-001.3: Validates packet integrity using CRC-16 checksums
+  • FR-001.4: Timestamps all received packets with nanosecond precision
+  • FR-001.5: Supports batch ingestion with configurable batch sizes
+
+[FR-002] Data Format Support (HIGH)
+  • FR-002.1: Supports JSON telemetry packet format
+  • FR-002.2: Supports binary telemetry packet format (planned)
+  • FR-002.3: Decodes telemetry parameters based on spacecraft dictionaries
+  • FR-002.4: Supports configurable parameter scaling and calibration
+
+[NFR-001] Throughput Performance
+  • NFR-001.1: Sustains 50,000+ messages per second ingestion rate
+  • NFR-001.2: Processes telemetry data with 99.9% uptime
+  • NFR-001.4: Maintains response times under 100ms for API queries
+
+[NFR-004] Data Integrity
+  • NFR-004.1: Ensures zero data loss during normal operations
+  • NFR-004.2: Maintains data consistency across all storage tiers
+  • NFR-004.4: Validates data integrity using checksums
+*/
+
 const express = require('express');
 const redis = require('redis');
 const WebSocket = require('ws');
