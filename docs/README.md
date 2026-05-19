@@ -51,30 +51,30 @@ The Space Telemetry Operations System is an enterprise-grade platform designed f
 
 ### Core SDLC Documents
 
-| Document | ID | Purpose | Compliance | Status |
+| <sub>Document</sub> | <sub>ID</sub> | <sub>Purpose</sub> | <sub>Compliance</sub> | <sub>Status</sub> |
 |----------|----|---------|-----------:|--------|
-| [**Software Requirements Document**](requirements/SRD-001-System-Requirements.md) | SRD-001 | System functional and non-functional requirements | NASA-STD-8739.8 | ✅ Complete |
-| [**Software Design Document**](design/SDD-001-System-Design.md) | SDD-001 | Comprehensive system architecture and design | NASA-STD-8739.8 | ✅ Complete |
-| [**Software Test Plan**](testing/STP-001-Test-Plan.md) | STP-001 | Complete testing strategy and procedures | NASA-STD-8739.8 | ✅ Complete |
-| [**Software Configuration Management Plan**](configuration/SCMP-001-Configuration-Management.md) | SCMP-001 | Version control and change management | NASA-STD-8739.8 | ✅ Complete |
-| [**Coding Standards and Procedures**](procedures/CSP-001-Coding-Standards.md) | CSP-001 | Development standards and best practices | NASA-STD-8739.8 | ✅ Complete |
-| [**SDLC Process Overview**](SDLC-Process-Overview.md) | SDLC-001 | Complete lifecycle process framework | NASA-STD-8739.8 | ✅ Complete |
+| <sub>[**Software Requirements Document**](requirements/SRD-001-System-Requirements.md)</sub> | <sub>SRD-001</sub> | <sub>System functional and non-functional requirements</sub> | <sub>NASA-STD-8739.8</sub> | <sub>✅ Complete</sub> |
+| <sub>[**Software Design Document**](design/SDD-001-System-Design.md)</sub> | <sub>SDD-001</sub> | <sub>Comprehensive system architecture and design</sub> | <sub>NASA-STD-8739.8</sub> | <sub>✅ Complete</sub> |
+| <sub>[**Software Test Plan**](testing/STP-001-Test-Plan.md)</sub> | <sub>STP-001</sub> | <sub>Complete testing strategy and procedures</sub> | <sub>NASA-STD-8739.8</sub> | <sub>✅ Complete</sub> |
+| <sub>[**Software Configuration Management Plan**](configuration/SCMP-001-Configuration-Management.md)</sub> | <sub>SCMP-001</sub> | <sub>Version control and change management</sub> | <sub>NASA-STD-8739.8</sub> | <sub>✅ Complete</sub> |
+| <sub>[**Coding Standards and Procedures**](procedures/CSP-001-Coding-Standards.md)</sub> | <sub>CSP-001</sub> | <sub>Development standards and best practices</sub> | <sub>NASA-STD-8739.8</sub> | <sub>✅ Complete</sub> |
+| <sub>[**SDLC Process Overview**](SDLC-Process-Overview.md)</sub> | <sub>SDLC-001</sub> | <sub>Complete lifecycle process framework</sub> | <sub>NASA-STD-8739.8</sub> | <sub>✅ Complete</sub> |
 
 ### Supporting Documentation
 
-| Document Type | Location | Description |
+| <sub>Document Type</sub> | <sub>Location</sub> | <sub>Description</sub> |
 |---------------|----------|-------------|
-| **Process Templates** | [templates/](templates/) | Standardized templates for development processes |
-| **Quality Checklists** | [checklists/](checklists/) | Quality assurance and compliance checklists |
-| **Technical Diagrams** | [diagrams/](diagrams/) | System architecture and process flow diagrams |
-| **Training Materials** | [training/](training/) | SDLC training resources and certification guides |
+| <sub>**Process Templates**</sub> | <sub>[templates/](templates/)</sub> | <sub>Standardized templates for development processes</sub> |
+| <sub>**Quality Checklists**</sub> | <sub>[checklists/](checklists/)</sub> | <sub>Quality assurance and compliance checklists</sub> |
+| <sub>**Technical Diagrams**</sub> | <sub>[diagrams/](diagrams/)</sub> | <sub>System architecture and process flow diagrams</sub> |
+| <sub>**Training Materials**</sub> | <sub>[training/](training/)</sub> | <sub>SDLC training resources and certification guides</sub> |
 
 ### Verification and Validation Documents
 
-| Document | ID | Purpose | Status |
+| <sub>Document</sub> | <sub>ID</sub> | <sub>Purpose</sub> | <sub>Status</sub> |
 |----------|----|---------|---------|
-| [**Requirements Fulfillment Report**](verification/Requirements-Fulfillment-Report.md) | RFR-001 | Comprehensive requirements implementation tracking | ✅ Complete |
-| [**Requirements Verification Matrix**](verification/Requirements-Verification-Matrix.md) | RVM-001 | Detailed requirement-to-code traceability matrix | ✅ Complete |
+| <sub>[**Requirements Fulfillment Report**](verification/Requirements-Fulfillment-Report.md)</sub> | <sub>RFR-001</sub> | <sub>Comprehensive requirements implementation tracking</sub> | <sub>✅ Complete</sub> |
+| <sub>[**Requirements Verification Matrix**](verification/Requirements-Verification-Matrix.md)</sub> | <sub>RVM-001</sub> | <sub>Detailed requirement-to-code traceability matrix</sub> | <sub>✅ Complete</sub> |
 
 ---
 
@@ -130,14 +130,14 @@ graph TD
 
 ### Document Relationships
 
-| Document | Depends On | Supports |
+| <sub>Document</sub> | <sub>Depends On</sub> | <sub>Supports</sub> |
 |----------|------------|----------|
-| **SDLC-001** | NASA-STD-8739.8 | All other documents |
-| **SRD-001** | SDLC-001 | SDD-001, STP-001 |
-| **SDD-001** | SRD-001, SDLC-001 | Implementation, Testing |
-| **STP-001** | SRD-001, SDD-001 | Verification & Validation |
-| **SCMP-001** | SDLC-001 | All development activities |
-| **CSP-001** | SDLC-001 | Implementation quality |
+| <sub>**SDLC-001**</sub> | <sub>NASA-STD-8739.8</sub> | <sub>All other documents</sub> |
+| <sub>**SRD-001**</sub> | <sub>SDLC-001</sub> | <sub>SDD-001, STP-001</sub> |
+| <sub>**SDD-001**</sub> | <sub>SRD-001, SDLC-001</sub> | <sub>Implementation, Testing</sub> |
+| <sub>**STP-001**</sub> | <sub>SRD-001, SDD-001</sub> | <sub>Verification & Validation</sub> |
+| <sub>**SCMP-001**</sub> | <sub>SDLC-001</sub> | <sub>All development activities</sub> |
+| <sub>**CSP-001**</sub> | <sub>SDLC-001</sub> | <sub>Implementation quality</sub> |
 
 ---
 
@@ -145,14 +145,14 @@ graph TD
 
 ### NASA-STD-8739.8 Requirements Coverage
 
-| Standard Requirement | Primary Document | Supporting Documents | Evidence |
+| <sub>Standard Requirement</sub> | <sub>Primary Document</sub> | <sub>Supporting Documents</sub> | <sub>Evidence</sub> |
 |---------------------|------------------|---------------------|----------|
-| **Software Planning** | SDLC-001 | All documents | Process framework |
-| **Requirements Management** | SRD-001 | SCMP-001 | Traceability matrix |
-| **Design and Implementation** | SDD-001 | CSP-001 | Architecture docs, code standards |
-| **Verification and Validation** | STP-001 | SRD-001, SDD-001 | Test procedures, results |
-| **Configuration Management** | SCMP-001 | All documents | Version control, baselines |
-| **Quality Assurance** | CSP-001, STP-001 | All documents | Quality gates, metrics |
+| <sub>**Software Planning**</sub> | <sub>SDLC-001</sub> | <sub>All documents</sub> | <sub>Process framework</sub> |
+| <sub>**Requirements Management**</sub> | <sub>SRD-001</sub> | <sub>SCMP-001</sub> | <sub>Traceability matrix</sub> |
+| <sub>**Design and Implementation**</sub> | <sub>SDD-001</sub> | <sub>CSP-001</sub> | <sub>Architecture docs, code standards</sub> |
+| <sub>**Verification and Validation**</sub> | <sub>STP-001</sub> | <sub>SRD-001, SDD-001</sub> | <sub>Test procedures, results</sub> |
+| <sub>**Configuration Management**</sub> | <sub>SCMP-001</sub> | <sub>All documents</sub> | <sub>Version control, baselines</sub> |
+| <sub>**Quality Assurance**</sub> | <sub>CSP-001, STP-001</sub> | <sub>All documents</sub> | <sub>Quality gates, metrics</sub> |
 
 ### Compliance Verification
 
@@ -202,13 +202,13 @@ All documentation follows semantic versioning:
 
 ### Available Templates
 
-| Template | Purpose | Format | Location |
+| <sub>Template</sub> | <sub>Purpose</sub> | <sub>Format</sub> | <sub>Location</sub> |
 |----------|---------|--------|----------|
-| **Change Request Form** | Configuration change control | Markdown | [templates/change-request.md](templates/change-request.md) |
-| **Test Case Template** | Standardized test documentation | Markdown | [templates/test-case.md](templates/test-case.md) |
-| **Code Review Checklist** | Code quality assurance | Markdown | [templates/code-review.md](templates/code-review.md) |
-| **Requirements Template** | Requirements specification | Markdown | [templates/requirement.md](templates/requirement.md) |
-| **Design Review Template** | Design review documentation | Markdown | [templates/design-review.md](templates/design-review.md) |
+| <sub>**Change Request Form**</sub> | <sub>Configuration change control</sub> | <sub>Markdown</sub> | <sub>[templates/change-request.md](templates/change-request.md)</sub> |
+| <sub>**Test Case Template**</sub> | <sub>Standardized test documentation</sub> | <sub>Markdown</sub> | <sub>[templates/test-case.md](templates/test-case.md)</sub> |
+| <sub>**Code Review Checklist**</sub> | <sub>Code quality assurance</sub> | <sub>Markdown</sub> | <sub>[templates/code-review.md](templates/code-review.md)</sub> |
+| <sub>**Requirements Template**</sub> | <sub>Requirements specification</sub> | <sub>Markdown</sub> | <sub>[templates/requirement.md](templates/requirement.md)</sub> |
+| <sub>**Design Review Template**</sub> | <sub>Design review documentation</sub> | <sub>Markdown</sub> | <sub>[templates/design-review.md](templates/design-review.md)</sub> |
 
 ### Usage Instructions
 
@@ -242,13 +242,13 @@ All documentation follows semantic versioning:
 
 ### Quality Metrics
 
-| Metric | Target | Measurement |
+| <sub>Metric</sub> | <sub>Target</sub> | <sub>Measurement</sub> |
 |--------|--------|-------------|
-| **Document Coverage** | 100% | All NASA-STD-8739.8 requirements covered |
-| **Traceability** | 100% | All requirements traced to implementation |
-| **Review Completion** | 100% | All documents formally reviewed |
-| **Compliance Score** | 100% | Full NASA-STD-8739.8 compliance |
-| **Template Usage** | 90%+ | Standardized templates used consistently |
+| <sub>**Document Coverage**</sub> | <sub>100%</sub> | <sub>All NASA-STD-8739.8 requirements covered</sub> |
+| <sub>**Traceability**</sub> | <sub>100%</sub> | <sub>All requirements traced to implementation</sub> |
+| <sub>**Review Completion**</sub> | <sub>100%</sub> | <sub>All documents formally reviewed</sub> |
+| <sub>**Compliance Score**</sub> | <sub>100%</sub> | <sub>Full NASA-STD-8739.8 compliance</sub> |
+| <sub>**Template Usage**</sub> | <sub>90%+</sub> | <sub>Standardized templates used consistently</sub> |
 
 ---
 
@@ -256,12 +256,12 @@ All documentation follows semantic versioning:
 
 ### Update Schedule
 
-| Update Type | Frequency | Trigger | Approval |
+| <sub>Update Type</sub> | <sub>Frequency</sub> | <sub>Trigger</sub> | <sub>Approval</sub> |
 |-------------|-----------|---------|----------|
-| **Minor Updates** | As needed | Process improvements | Document owner |
-| **Major Revisions** | Annually | Significant changes | Configuration Control Board |
-| **Compliance Updates** | As required | Standard changes | Quality assurance |
-| **Template Updates** | Quarterly | Usage feedback | Development team |
+| <sub>**Minor Updates**</sub> | <sub>As needed</sub> | <sub>Process improvements</sub> | <sub>Document owner</sub> |
+| <sub>**Major Revisions**</sub> | <sub>Annually</sub> | <sub>Significant changes</sub> | <sub>Configuration Control Board</sub> |
+| <sub>**Compliance Updates**</sub> | <sub>As required</sub> | <sub>Standard changes</sub> | <sub>Quality assurance</sub> |
+| <sub>**Template Updates**</sub> | <sub>Quarterly</sub> | <sub>Usage feedback</sub> | <sub>Development team</sub> |
 
 ### Change Process
 
@@ -275,9 +275,9 @@ All documentation follows semantic versioning:
 
 ### Version History
 
-| Version | Date | Changes | Author |
+| <sub>Version</sub> | <sub>Date</sub> | <sub>Changes</sub> | <sub>Author</sub> |
 |---------|------|---------|--------|
-| **1.0** | 2024-12-18 | Initial comprehensive SDLC documentation suite | Development Team |
+| <sub>**1.0**</sub> | <sub>2024-12-18</sub> | <sub>Initial comprehensive SDLC documentation suite</sub> | <sub>Development Team</sub> |
 
 ---
 
