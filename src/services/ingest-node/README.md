@@ -149,17 +149,17 @@ ws.on('message', (data) => {
 
 ### Environment Variables
 
-| Variable | Description | Default |
+| <sub>Variable</sub> | <sub>Description</sub> | <sub>Default</sub> |
 |----------|-------------|---------|
-| `NODE_ENV` | Environment mode | `development` |
-| `PORT` | HTTP server port | `8080` |
-| `WS_PORT` | WebSocket server port | `8081` |
-| `REDIS_HOST` | Redis server host | `localhost` |
-| `REDIS_PORT` | Redis server port | `6379` |
-| `REDIS_PASSWORD` | Redis password | `` |
-| `RATE_LIMIT_MAX_REQUESTS` | Max requests per window | `1000` |
-| `BATCH_SIZE` | Batch processing size | `100` |
-| `LOG_LEVEL` | Logging level | `info` |
+| <sub>`NODE_ENV`</sub> | <sub>Environment mode</sub> | <sub>`development`</sub> |
+| <sub>`PORT`</sub> | <sub>HTTP server port</sub> | <sub>`8080`</sub> |
+| <sub>`WS_PORT`</sub> | <sub>WebSocket server port</sub> | <sub>`8081`</sub> |
+| <sub>`REDIS_HOST`</sub> | <sub>Redis server host</sub> | <sub>`localhost`</sub> |
+| <sub>`REDIS_PORT`</sub> | <sub>Redis server port</sub> | <sub>`6379`</sub> |
+| <sub>`REDIS_PASSWORD`</sub> | <sub>Redis password</sub> | <sub>``</sub> |
+| <sub>`RATE_LIMIT_MAX_REQUESTS`</sub> | <sub>Max requests per window</sub> | <sub>`1000`</sub> |
+| <sub>`BATCH_SIZE`</sub> | <sub>Batch processing size</sub> | <sub>`100`</sub> |
+| <sub>`LOG_LEVEL`</sub> | <sub>Logging level</sub> | <sub>`info`</sub> |
 
 ### Telemetry Data Schema
 
