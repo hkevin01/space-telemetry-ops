@@ -50,13 +50,13 @@ mindmap
 
 ### Target Use Cases
 
-| Use Case | Description | Criticality |
+| <sub>Use Case</sub> | <sub>Description</sub> | <sub>Criticality</sub> |
 |----------|-------------|-------------|
-| **ISS Operations** | Real-time crew safety and system monitoring | 🔴 Critical |
-| **Satellite Constellations** | Mass telemetry processing from hundreds of satellites | 🟠 High |
-| **Deep Space Missions** | Long-delay communication with robust data validation | 🟡 Medium |
-| **Launch Operations** | High-frequency telemetry during critical flight phases | 🔴 Critical |
-| **Ground Station Operations** | Multi-mission support with dynamic configuration | 🟠 High |
+| <sub>**ISS Operations**</sub> | <sub>Real-time crew safety and system monitoring</sub> | <sub>🔴 Critical</sub> |
+| <sub>**Satellite Constellations**</sub> | <sub>Mass telemetry processing from hundreds of satellites</sub> | <sub>🟠 High</sub> |
+| <sub>**Deep Space Missions**</sub> | <sub>Long-delay communication with robust data validation</sub> | <sub>🟡 Medium</sub> |
+| <sub>**Launch Operations**</sub> | <sub>High-frequency telemetry during critical flight phases</sub> | <sub>🔴 Critical</sub> |
+| <sub>**Ground Station Operations**</sub> | <sub>Multi-mission support with dynamic configuration</sub> | <sub>🟠 High</sub> |
 
 ## 📖 How This Documentation Serves Our Mission
 
@@ -129,15 +129,15 @@ Each section of this README is strategically designed to support different aspec
 
 ### Mission Impact Summary
 
-| Documentation Section | Primary Stakeholders | Mission Impact | Success Metrics |
+| <sub>Documentation Section</sub> | <sub>Primary Stakeholders</sub> | <sub>Mission Impact</sub> | <sub>Success Metrics</sub> |
 |----------------------|---------------------|----------------|-----------------|
-| **Project Purpose** | All stakeholders | 🎯 Alignment & Vision | Stakeholder buy-in, clear requirements |
-| **Architecture** | Technical teams | 🏗️ System Design | Reduced integration issues, scalable design |
-| **Technology Stack** | Development teams | 🛠️ Implementation | Faster development, fewer technical issues |
-| **Performance** | Operations teams | ⚡ Mission Readiness | SLA compliance, system reliability |
-| **Security** | Security/Compliance | 🛡️ Risk Management | Audit success, zero security incidents |
-| **Deployment** | DevOps/Operations | 🚀 Operational Excellence | Deployment success, system uptime |
-| **Community** | All contributors | 🤝 Sustainable Growth | Contributor growth, code quality |
+| <sub>**Project Purpose**</sub> | <sub>All stakeholders</sub> | <sub>🎯 Alignment & Vision</sub> | <sub>Stakeholder buy-in, clear requirements</sub> |
+| <sub>**Architecture**</sub> | <sub>Technical teams</sub> | <sub>🏗️ System Design</sub> | <sub>Reduced integration issues, scalable design</sub> |
+| <sub>**Technology Stack**</sub> | <sub>Development teams</sub> | <sub>🛠️ Implementation</sub> | <sub>Faster development, fewer technical issues</sub> |
+| <sub>**Performance**</sub> | <sub>Operations teams</sub> | <sub>⚡ Mission Readiness</sub> | <sub>SLA compliance, system reliability</sub> |
+| <sub>**Security**</sub> | <sub>Security/Compliance</sub> | <sub>🛡️ Risk Management</sub> | <sub>Audit success, zero security incidents</sub> |
+| <sub>**Deployment**</sub> | <sub>DevOps/Operations</sub> | <sub>🚀 Operational Excellence</sub> | <sub>Deployment success, system uptime</sub> |
+| <sub>**Community**</sub> | <sub>All contributors</sub> | <sub>🤝 Sustainable Growth</sub> | <sub>Contributor growth, code quality</sub> |
 
 This comprehensive documentation approach ensures that every stakeholder has the information needed to contribute effectively to our mission of providing reliable, secure, and high-performance space telemetry operations.
 
@@ -147,14 +147,14 @@ The Space Telemetry Operations System is a **full-stack, cloud-native platform**
 
 ### Core Capabilities
 
-| Capability | Performance Target | Current Status |
+| <sub>Capability</sub> | <sub>Performance Target</sub> | <sub>Current Status</sub> |
 |------------|-------------------|----------------|
-| **Telemetry Ingestion** | >50,000 packets/sec | ✅ Implemented |
-| **Real-time Processing** | <100ms end-to-end latency | ✅ Implemented |
-| **Data Storage** | Petabyte-scale with compression | 🟡 In Progress |
-| **Anomaly Detection** | AI/ML-powered with <1% false positive | 🟡 In Progress |
-| **Mission Control UI** | Sub-second dashboard updates | ✅ Implemented |
-| **API Performance** | <50ms P95 response time | ✅ Implemented |
+| <sub>**Telemetry Ingestion**</sub> | <sub>>50,000 packets/sec</sub> | <sub>✅ Implemented</sub> |
+| <sub>**Real-time Processing**</sub> | <sub><100ms end-to-end latency</sub> | <sub>✅ Implemented</sub> |
+| <sub>**Data Storage**</sub> | <sub>Petabyte-scale with compression</sub> | <sub>🟡 In Progress</sub> |
+| <sub>**Anomaly Detection**</sub> | <sub>AI/ML-powered with <1% false positive</sub> | <sub>🟡 In Progress</sub> |
+| <sub>**Mission Control UI**</sub> | <sub>Sub-second dashboard updates</sub> | <sub>✅ Implemented</sub> |
+| <sub>**API Performance**</sub> | <sub><50ms P95 response time</sub> | <sub>✅ Implemented</sub> |
 
 ### System Highlights
 
@@ -330,36 +330,36 @@ sequenceDiagram
 
 ### Architecture Principles
 
-| Principle | Implementation | Benefits |
+| <sub>Principle</sub> | <sub>Implementation</sub> | <sub>Benefits</sub> |
 |-----------|----------------|----------|
-| **Microservices** | Independent, containerized services | Scalability, maintainability, fault isolation |
-| **Event-Driven** | Async messaging with Redis/Kafka | Decoupling, resilience, real-time processing |
-| **Cloud Native** | Kubernetes-ready with 12-factor app design | Portability, scalability, DevOps integration |
-| **API-First** | OpenAPI/Swagger documentation | Integration-ready, developer experience |
-| **Security by Design** | NIST SP 800-53 baseline implementation | Compliance, risk reduction, trust |
+| <sub>**Microservices**</sub> | <sub>Independent, containerized services</sub> | <sub>Scalability, maintainability, fault isolation</sub> |
+| <sub>**Event-Driven**</sub> | <sub>Async messaging with Redis/Kafka</sub> | <sub>Decoupling, resilience, real-time processing</sub> |
+| <sub>**Cloud Native**</sub> | <sub>Kubernetes-ready with 12-factor app design</sub> | <sub>Portability, scalability, DevOps integration</sub> |
+| <sub>**API-First**</sub> | <sub>OpenAPI/Swagger documentation</sub> | <sub>Integration-ready, developer experience</sub> |
+| <sub>**Security by Design**</sub> | <sub>NIST SP 800-53 baseline implementation</sub> | <sub>Compliance, risk reduction, trust</sub> |
 
 ### Technology Matrix
 
-| Layer | Technology | Version | Purpose | Status |
+| <sub>Layer</sub> | <sub>Technology</sub> | <sub>Version</sub> | <sub>Purpose</sub> | <sub>Status</sub> |
 |-------|------------|---------|---------|--------|
-| **Frontend** | React | 18.2.0 | UI Framework | ✅ Active |
-| | TypeScript | 4.9+ | Type Safety | ✅ Active |
-| | Vite | 4.0+ | Build Tool | ✅ Active |
-| | Tailwind CSS | 3.2+ | Styling | ✅ Active |
-| | Lucide React | 0.321+ | Icons | ✅ Active |
-| **Backend** | FastAPI | 0.95+ | Main API Service | ✅ Active |
-| | Node.js | 18+ | Ingestion Service | ✅ Active |
-| | Python | 3.11+ | Core Logic | ✅ Active |
-| | Apache Airflow | 2.7+ | ETL Orchestration | 🟡 Planned |
-| **Database** | PostgreSQL | 15+ | Primary Database | ✅ Active |
-| | Redis | 7+ | Cache & Queue | ✅ Active |
-| | MinIO | Latest | Object Storage | ✅ Active |
-| **Infrastructure** | Docker | 24+ | Containerization | ✅ Active |
-| | Kubernetes | 1.28+ | Orchestration | 🟡 Planned |
-| | GitHub Actions | Latest | CI/CD Pipeline | ✅ Active |
-| **Monitoring** | Prometheus | Latest | Metrics Collection | 🟡 Planned |
-| | Grafana | Latest | Visualization | 🟡 Planned |
-| | ELK Stack | 8+ | Logging | 🟡 Planned |
+| <sub>**Frontend**</sub> | <sub>React</sub> | <sub>18.2.0</sub> | <sub>UI Framework</sub> | <sub>✅ Active</sub> |
+|  | <sub>TypeScript</sub> | <sub>4.9+</sub> | <sub>Type Safety</sub> | <sub>✅ Active</sub> |
+|  | <sub>Vite</sub> | <sub>4.0+</sub> | <sub>Build Tool</sub> | <sub>✅ Active</sub> |
+|  | <sub>Tailwind CSS</sub> | <sub>3.2+</sub> | <sub>Styling</sub> | <sub>✅ Active</sub> |
+|  | <sub>Lucide React</sub> | <sub>0.321+</sub> | <sub>Icons</sub> | <sub>✅ Active</sub> |
+| <sub>**Backend**</sub> | <sub>FastAPI</sub> | <sub>0.95+</sub> | <sub>Main API Service</sub> | <sub>✅ Active</sub> |
+|  | <sub>Node.js</sub> | <sub>18+</sub> | <sub>Ingestion Service</sub> | <sub>✅ Active</sub> |
+|  | <sub>Python</sub> | <sub>3.11+</sub> | <sub>Core Logic</sub> | <sub>✅ Active</sub> |
+|  | <sub>Apache Airflow</sub> | <sub>2.7+</sub> | <sub>ETL Orchestration</sub> | <sub>🟡 Planned</sub> |
+| <sub>**Database**</sub> | <sub>PostgreSQL</sub> | <sub>15+</sub> | <sub>Primary Database</sub> | <sub>✅ Active</sub> |
+|  | <sub>Redis</sub> | <sub>7+</sub> | <sub>Cache & Queue</sub> | <sub>✅ Active</sub> |
+|  | <sub>MinIO</sub> | <sub>Latest</sub> | <sub>Object Storage</sub> | <sub>✅ Active</sub> |
+| <sub>**Infrastructure**</sub> | <sub>Docker</sub> | <sub>24+</sub> | <sub>Containerization</sub> | <sub>✅ Active</sub> |
+|  | <sub>Kubernetes</sub> | <sub>1.28+</sub> | <sub>Orchestration</sub> | <sub>🟡 Planned</sub> |
+|  | <sub>GitHub Actions</sub> | <sub>Latest</sub> | <sub>CI/CD Pipeline</sub> | <sub>✅ Active</sub> |
+| <sub>**Monitoring**</sub> | <sub>Prometheus</sub> | <sub>Latest</sub> | <sub>Metrics Collection</sub> | <sub>🟡 Planned</sub> |
+|  | <sub>Grafana</sub> | <sub>Latest</sub> | <sub>Visualization</sub> | <sub>🟡 Planned</sub> |
+|  | <sub>ELK Stack</sub> | <sub>8+</sub> | <sub>Logging</sub> | <sub>🟡 Planned</sub> |
 
 ### Service Architecture Details
 
@@ -445,13 +445,13 @@ Redis (Remote Dictionary Server) is an in-memory data structure store that serve
 
 **Redis Use Cases in Our System:**
 
-| Use Case | Implementation | Mission Impact |
+| <sub>Use Case</sub> | <sub>Implementation</sub> | <sub>Mission Impact</sub> |
 |----------|----------------|----------------|
-| **Real-time Telemetry Cache** | Store latest sensor readings | <1ms access to current spacecraft status |
-| **Message Queue** | Buffer incoming telemetry packets | Handles burst traffic during mission events |
-| **Session Management** | Store user authentication tokens | Secure, fast access for mission controllers |
-| **Rate Limiting** | Prevent system overload | Protects against telemetry data floods |
-| **Pub/Sub Alerts** | Real-time anomaly notifications | Instant alerts for critical system status |
+| <sub>**Real-time Telemetry Cache**</sub> | <sub>Store latest sensor readings</sub> | <sub><1ms access to current spacecraft status</sub> |
+| <sub>**Message Queue**</sub> | <sub>Buffer incoming telemetry packets</sub> | <sub>Handles burst traffic during mission events</sub> |
+| <sub>**Session Management**</sub> | <sub>Store user authentication tokens</sub> | <sub>Secure, fast access for mission controllers</sub> |
+| <sub>**Rate Limiting**</sub> | <sub>Prevent system overload</sub> | <sub>Protects against telemetry data floods</sub> |
+| <sub>**Pub/Sub Alerts**</sub> | <sub>Real-time anomaly notifications</sub> | <sub>Instant alerts for critical system status</sub> |
 
 ##### 🌡️ **Data Temperature Paths: Optimizing for Performance & Cost**
 
@@ -589,27 +589,27 @@ graph TB
 
 #### Security & Compliance Framework
 
-| Security Layer | Implementation | Standards |
+| <sub>Security Layer</sub> | <sub>Implementation</sub> | <sub>Standards</sub> |
 |----------------|----------------|-----------|
-| **Network Security** | TLS 1.3, VPN, Firewalls | NIST SP 800-53 SC-8 |
-| **Application Security** | Input validation, OWASP compliance | NIST SP 800-53 SI-10 |
-| **Data Security** | AES-256 encryption, key rotation | NIST SP 800-53 SC-28 |
-| **Access Control** | RBAC, MFA, least privilege | NIST SP 800-53 AC-2 |
-| **Audit & Monitoring** | Structured logging, SIEM integration | NIST SP 800-53 AU-2 |
+| <sub>**Network Security**</sub> | <sub>TLS 1.3, VPN, Firewalls</sub> | <sub>NIST SP 800-53 SC-8</sub> |
+| <sub>**Application Security**</sub> | <sub>Input validation, OWASP compliance</sub> | <sub>NIST SP 800-53 SI-10</sub> |
+| <sub>**Data Security**</sub> | <sub>AES-256 encryption, key rotation</sub> | <sub>NIST SP 800-53 SC-28</sub> |
+| <sub>**Access Control**</sub> | <sub>RBAC, MFA, least privilege</sub> | <sub>NIST SP 800-53 AC-2</sub> |
+| <sub>**Audit & Monitoring**</sub> | <sub>Structured logging, SIEM integration</sub> | <sub>NIST SP 800-53 AU-2</sub> |
 
 ## 🚀 Quick Start Guide
 
 ### Prerequisites & Requirements
 
-| Requirement | Minimum | Recommended | Purpose |
+| <sub>Requirement</sub> | <sub>Minimum</sub> | <sub>Recommended</sub> | <sub>Purpose</sub> |
 |-------------|---------|-------------|---------|
-| **Docker** | 20.10+ | 24.0+ | Container runtime |
-| **Docker Compose** | 2.0+ | 2.21+ | Multi-container orchestration |
-| **Node.js** | 18+ | 20+ | Frontend development |
-| **Python** | 3.11+ | 3.11+ | Backend development |
-| **Git** | 2.30+ | Latest | Version control |
-| **RAM** | 8GB | 16GB+ | Development environment |
-| **Storage** | 50GB | 100GB+ | Data and containers |
+| <sub>**Docker**</sub> | <sub>20.10+</sub> | <sub>24.0+</sub> | <sub>Container runtime</sub> |
+| <sub>**Docker Compose**</sub> | <sub>2.0+</sub> | <sub>2.21+</sub> | <sub>Multi-container orchestration</sub> |
+| <sub>**Node.js**</sub> | <sub>18+</sub> | <sub>20+</sub> | <sub>Frontend development</sub> |
+| <sub>**Python**</sub> | <sub>3.11+</sub> | <sub>3.11+</sub> | <sub>Backend development</sub> |
+| <sub>**Git**</sub> | <sub>2.30+</sub> | <sub>Latest</sub> | <sub>Version control</sub> |
+| <sub>**RAM**</sub> | <sub>8GB</sub> | <sub>16GB+</sub> | <sub>Development environment</sub> |
+| <sub>**Storage**</sub> | <sub>50GB</sub> | <sub>100GB+</sub> | <sub>Data and containers</sub> |
 
 ### Development Environment Setup
 
@@ -631,15 +631,15 @@ docker compose up -d
 
 ### Service Access Points
 
-| Service | URL | Credentials | Purpose |
+| <sub>Service</sub> | <sub>URL</sub> | <sub>Credentials</sub> | <sub>Purpose</sub> |
 |---------|-----|-------------|---------|
-| **Frontend Dashboard** | <http://localhost:3000> | - | Main user interface |
-| **API Documentation** | <http://localhost:8000/docs> | - | Interactive API docs |
-| **Health Check** | <http://localhost:8000/health> | - | System status |
-| **MinIO Console** | <http://localhost:9001> | minioadmin/minioadmin | Object storage |
-| **Redis Commander** | <http://localhost:8081> | - | Cache inspection |
-| **Prometheus** | <http://localhost:9090> | - | Metrics (planned) |
-| **Grafana** | <http://localhost:3001> | admin/admin | Monitoring (planned) |
+| <sub>**Frontend Dashboard**</sub> | <sub><http://localhost:3000></sub> | <sub>-</sub> | <sub>Main user interface</sub> |
+| <sub>**API Documentation**</sub> | <sub><http://localhost:8000/docs></sub> | <sub>-</sub> | <sub>Interactive API docs</sub> |
+| <sub>**Health Check**</sub> | <sub><http://localhost:8000/health></sub> | <sub>-</sub> | <sub>System status</sub> |
+| <sub>**MinIO Console**</sub> | <sub><http://localhost:9001></sub> | <sub>minioadmin/minioadmin</sub> | <sub>Object storage</sub> |
+| <sub>**Redis Commander**</sub> | <sub><http://localhost:8081></sub> | <sub>-</sub> | <sub>Cache inspection</sub> |
+| <sub>**Prometheus**</sub> | <sub><http://localhost:9090></sub> | <sub>-</sub> | <sub>Metrics (planned)</sub> |
+| <sub>**Grafana**</sub> | <sub><http://localhost:3001></sub> | <sub>admin/admin</sub> | <sub>Monitoring (planned)</sub> |
 
 ### Project Structure Overview
 
@@ -666,82 +666,82 @@ space-telemetry-ops/
 
 ### Core System Features
 
-| Feature Category | Capability | Implementation Status | Performance Target |
+| <sub>Feature Category</sub> | <sub>Capability</sub> | <sub>Implementation Status</sub> | <sub>Performance Target</sub> |
 |-----------------|------------|----------------------|-------------------|
-| **Data Ingestion** | High-throughput packet processing | ✅ Complete | 50,000+ msgs/sec |
-| | Protocol support (TCP/UDP/Serial) | ✅ Complete | Multi-protocol |
-| | Real-time validation | ✅ Complete | <10ms validation |
-| | Data deduplication | ✅ Complete | 99.9% accuracy |
-| **Processing** | Stream processing | ✅ Complete | <100ms end-to-end |
-| | Batch processing | 🟡 In Progress | Configurable intervals |
-| | Anomaly detection | 🟡 In Progress | <1% false positive |
-| | Time synchronization | ✅ Complete | Nanosecond precision |
-| **Storage** | Relational data (PostgreSQL) | ✅ Complete | Multi-TB capacity |
-| | Cache layer (Redis) | ✅ Complete | Sub-millisecond access |
-| | Object storage (MinIO) | ✅ Complete | Petabyte scale |
-| | Data compression | 🟡 Planned | 80%+ reduction |
-| **API & Integration** | RESTful API | ✅ Complete | <50ms P95 response |
-| | Real-time streaming | ✅ Complete | Server-Sent Events |
-| | WebSocket support | 🟡 Planned | Bi-directional |
-| | GraphQL endpoint | 🟡 Planned | Flexible queries |
-| **Security** | Authentication & Authorization | ✅ Complete | RBAC + MFA |
-| | Data encryption | ✅ Complete | AES-256 |
-| | Audit logging | ✅ Complete | 100% coverage |
-| | NIST SP 800-53 compliance | ✅ Complete | Full baseline |
-| **Monitoring** | Health checks | ✅ Complete | Multi-layer |
-| | Performance metrics | 🟡 In Progress | Prometheus ready |
-| | Alerting | 🟡 In Progress | Configurable rules |
-| | Dashboard analytics | ✅ Complete | Real-time |
+| <sub>**Data Ingestion**</sub> | <sub>High-throughput packet processing</sub> | <sub>✅ Complete</sub> | <sub>50,000+ msgs/sec</sub> |
+|  | <sub>Protocol support (TCP/UDP/Serial)</sub> | <sub>✅ Complete</sub> | <sub>Multi-protocol</sub> |
+|  | <sub>Real-time validation</sub> | <sub>✅ Complete</sub> | <sub><10ms validation</sub> |
+|  | <sub>Data deduplication</sub> | <sub>✅ Complete</sub> | <sub>99.9% accuracy</sub> |
+| <sub>**Processing**</sub> | <sub>Stream processing</sub> | <sub>✅ Complete</sub> | <sub><100ms end-to-end</sub> |
+|  | <sub>Batch processing</sub> | <sub>🟡 In Progress</sub> | <sub>Configurable intervals</sub> |
+|  | <sub>Anomaly detection</sub> | <sub>🟡 In Progress</sub> | <sub><1% false positive</sub> |
+|  | <sub>Time synchronization</sub> | <sub>✅ Complete</sub> | <sub>Nanosecond precision</sub> |
+| <sub>**Storage**</sub> | <sub>Relational data (PostgreSQL)</sub> | <sub>✅ Complete</sub> | <sub>Multi-TB capacity</sub> |
+|  | <sub>Cache layer (Redis)</sub> | <sub>✅ Complete</sub> | <sub>Sub-millisecond access</sub> |
+|  | <sub>Object storage (MinIO)</sub> | <sub>✅ Complete</sub> | <sub>Petabyte scale</sub> |
+|  | <sub>Data compression</sub> | <sub>🟡 Planned</sub> | <sub>80%+ reduction</sub> |
+| <sub>**API & Integration**</sub> | <sub>RESTful API</sub> | <sub>✅ Complete</sub> | <sub><50ms P95 response</sub> |
+|  | <sub>Real-time streaming</sub> | <sub>✅ Complete</sub> | <sub>Server-Sent Events</sub> |
+|  | <sub>WebSocket support</sub> | <sub>🟡 Planned</sub> | <sub>Bi-directional</sub> |
+|  | <sub>GraphQL endpoint</sub> | <sub>🟡 Planned</sub> | <sub>Flexible queries</sub> |
+| <sub>**Security**</sub> | <sub>Authentication & Authorization</sub> | <sub>✅ Complete</sub> | <sub>RBAC + MFA</sub> |
+|  | <sub>Data encryption</sub> | <sub>✅ Complete</sub> | <sub>AES-256</sub> |
+|  | <sub>Audit logging</sub> | <sub>✅ Complete</sub> | <sub>100% coverage</sub> |
+|  | <sub>NIST SP 800-53 compliance</sub> | <sub>✅ Complete</sub> | <sub>Full baseline</sub> |
+| <sub>**Monitoring**</sub> | <sub>Health checks</sub> | <sub>✅ Complete</sub> | <sub>Multi-layer</sub> |
+|  | <sub>Performance metrics</sub> | <sub>🟡 In Progress</sub> | <sub>Prometheus ready</sub> |
+|  | <sub>Alerting</sub> | <sub>🟡 In Progress</sub> | <sub>Configurable rules</sub> |
+|  | <sub>Dashboard analytics</sub> | <sub>✅ Complete</sub> | <sub>Real-time</sub> |
 
 ### Mission Control Dashboard Features
 
-| Dashboard Component | Functionality | Status | Notes |
+| <sub>Dashboard Component</sub> | <sub>Functionality</sub> | <sub>Status</sub> | <sub>Notes</sub> |
 |-------------------|---------------|--------|--------|
-| **Real-time Telemetry** | Live data visualization | ✅ Active | <1s update latency |
-| **System Health** | Multi-spacecraft monitoring | ✅ Active | Color-coded status |
-| **Alert Management** | Configurable thresholds | ✅ Active | Multi-level alerts |
-| **Historical Analysis** | Trend visualization | ✅ Active | Customizable timeframes |
-| **Command Interface** | Spacecraft commanding | 🟡 Planned | Mission-specific |
-| **Mobile Responsive** | Cross-device support | ✅ Active | PWA enabled |
+| <sub>**Real-time Telemetry**</sub> | <sub>Live data visualization</sub> | <sub>✅ Active</sub> | <sub><1s update latency</sub> |
+| <sub>**System Health**</sub> | <sub>Multi-spacecraft monitoring</sub> | <sub>✅ Active</sub> | <sub>Color-coded status</sub> |
+| <sub>**Alert Management**</sub> | <sub>Configurable thresholds</sub> | <sub>✅ Active</sub> | <sub>Multi-level alerts</sub> |
+| <sub>**Historical Analysis**</sub> | <sub>Trend visualization</sub> | <sub>✅ Active</sub> | <sub>Customizable timeframes</sub> |
+| <sub>**Command Interface**</sub> | <sub>Spacecraft commanding</sub> | <sub>🟡 Planned</sub> | <sub>Mission-specific</sub> |
+| <sub>**Mobile Responsive**</sub> | <sub>Cross-device support</sub> | <sub>✅ Active</sub> | <sub>PWA enabled</sub> |
 
 ### Data Processing Capabilities
 
-| Processing Type | Capability | Performance | Implementation |
+| <sub>Processing Type</sub> | <sub>Capability</sub> | <sub>Performance</sub> | <sub>Implementation</sub> |
 |----------------|------------|-------------|----------------|
-| **Real-time Stream** | Live telemetry processing | 50K+ msgs/sec | Node.js + Redis |
-| **Batch Processing** | Historical data analysis | TBs/hour | Python + Pandas |
-| **Complex Event Processing** | Pattern detection | <100ms | Event-driven architecture |
-| **Machine Learning** | Predictive analytics | Model-dependent | Pluggable ML pipeline |
+| <sub>**Real-time Stream**</sub> | <sub>Live telemetry processing</sub> | <sub>50K+ msgs/sec</sub> | <sub>Node.js + Redis</sub> |
+| <sub>**Batch Processing**</sub> | <sub>Historical data analysis</sub> | <sub>TBs/hour</sub> | <sub>Python + Pandas</sub> |
+| <sub>**Complex Event Processing**</sub> | <sub>Pattern detection</sub> | <sub><100ms</sub> | <sub>Event-driven architecture</sub> |
+| <sub>**Machine Learning**</sub> | <sub>Predictive analytics</sub> | <sub>Model-dependent</sub> | <sub>Pluggable ML pipeline</sub> |
 
 ### Security & Compliance Features
 
-| Security Control | Implementation | Standard | Status |
+| <sub>Security Control</sub> | <sub>Implementation</sub> | <sub>Standard</sub> | <sub>Status</sub> |
 |-----------------|----------------|----------|--------|
-| **Access Control** | Role-based permissions (RBAC) | NIST AC-2 | ✅ Active |
-| **Authentication** | Multi-factor authentication | NIST IA-2 | ✅ Active |
-| **Encryption** | Data at rest & in transit | NIST SC-8, SC-28 | ✅ Active |
-| **Audit Logging** | Comprehensive activity logs | NIST AU-2 | ✅ Active |
-| **Network Security** | Segmented networks, firewalls | NIST SC-7 | ✅ Active |
-| **Vulnerability Management** | Automated scanning | NIST RA-5 | ✅ Active |
-| **Incident Response** | Automated alerting | NIST IR-4 | 🟡 In Progress |
-| **Business Continuity** | Backup & recovery | NIST CP-9 | 🟡 Planned |
+| <sub>**Access Control**</sub> | <sub>Role-based permissions (RBAC)</sub> | <sub>NIST AC-2</sub> | <sub>✅ Active</sub> |
+| <sub>**Authentication**</sub> | <sub>Multi-factor authentication</sub> | <sub>NIST IA-2</sub> | <sub>✅ Active</sub> |
+| <sub>**Encryption**</sub> | <sub>Data at rest & in transit</sub> | <sub>NIST SC-8, SC-28</sub> | <sub>✅ Active</sub> |
+| <sub>**Audit Logging**</sub> | <sub>Comprehensive activity logs</sub> | <sub>NIST AU-2</sub> | <sub>✅ Active</sub> |
+| <sub>**Network Security**</sub> | <sub>Segmented networks, firewalls</sub> | <sub>NIST SC-7</sub> | <sub>✅ Active</sub> |
+| <sub>**Vulnerability Management**</sub> | <sub>Automated scanning</sub> | <sub>NIST RA-5</sub> | <sub>✅ Active</sub> |
+| <sub>**Incident Response**</sub> | <sub>Automated alerting</sub> | <sub>NIST IR-4</sub> | <sub>🟡 In Progress</sub> |
+| <sub>**Business Continuity**</sub> | <sub>Backup & recovery</sub> | <sub>NIST CP-9</sub> | <sub>🟡 Planned</sub> |
 
 ## 📈 Performance Metrics & Benchmarks
 
 ### System Performance Targets
 
-| Performance Metric | Target | Current | Monitoring Method | SLA |
+| <sub>Performance Metric</sub> | <sub>Target</sub> | <sub>Current</sub> | <sub>Monitoring Method</sub> | <sub>SLA</sub> |
 |-------------------|--------|---------|-------------------|-----|
-| **System Uptime** | 99.9% | 99.95% | Health checks | 99.9% |
-| **Telemetry Ingestion Rate** | 50K msgs/sec | 65K msgs/sec | Performance counters | 10K msgs/sec minimum |
-| **API Response Time (P95)** | <50ms | <35ms | Request timing | <100ms |
-| **API Response Time (P99)** | <100ms | <85ms | Request timing | <200ms |
-| **Data Processing Latency** | <100ms | <75ms | End-to-end timing | <500ms |
-| **Database Query Time** | <10ms | <8ms | SQL performance | <50ms |
-| **Memory Usage** | <4GB | <2.5GB | System monitoring | <8GB |
-| **CPU Utilization** | <70% | <45% | System monitoring | <90% |
-| **Storage I/O** | <1000 IOPS | <750 IOPS | Disk monitoring | <5000 IOPS |
-| **Network Throughput** | 1Gbps | 1.2Gbps | Network monitoring | 100Mbps minimum |
+| <sub>**System Uptime**</sub> | <sub>99.9%</sub> | <sub>99.95%</sub> | <sub>Health checks</sub> | <sub>99.9%</sub> |
+| <sub>**Telemetry Ingestion Rate**</sub> | <sub>50K msgs/sec</sub> | <sub>65K msgs/sec</sub> | <sub>Performance counters</sub> | <sub>10K msgs/sec minimum</sub> |
+| <sub>**API Response Time (P95)**</sub> | <sub><50ms</sub> | <sub><35ms</sub> | <sub>Request timing</sub> | <sub><100ms</sub> |
+| <sub>**API Response Time (P99)**</sub> | <sub><100ms</sub> | <sub><85ms</sub> | <sub>Request timing</sub> | <sub><200ms</sub> |
+| <sub>**Data Processing Latency**</sub> | <sub><100ms</sub> | <sub><75ms</sub> | <sub>End-to-end timing</sub> | <sub><500ms</sub> |
+| <sub>**Database Query Time**</sub> | <sub><10ms</sub> | <sub><8ms</sub> | <sub>SQL performance</sub> | <sub><50ms</sub> |
+| <sub>**Memory Usage**</sub> | <sub><4GB</sub> | <sub><2.5GB</sub> | <sub>System monitoring</sub> | <sub><8GB</sub> |
+| <sub>**CPU Utilization**</sub> | <sub><70%</sub> | <sub><45%</sub> | <sub>System monitoring</sub> | <sub><90%</sub> |
+| <sub>**Storage I/O**</sub> | <sub><1000 IOPS</sub> | <sub><750 IOPS</sub> | <sub>Disk monitoring</sub> | <sub><5000 IOPS</sub> |
+| <sub>**Network Throughput**</sub> | <sub>1Gbps</sub> | <sub>1.2Gbps</sub> | <sub>Network monitoring</sub> | <sub>100Mbps minimum</sub> |
 
 ### Scalability Characteristics
 
@@ -765,23 +765,23 @@ graph LR
 
 ### Performance Testing Results
 
-| Test Scenario | Load | Throughput | Response Time | Success Rate |
+| <sub>Test Scenario</sub> | <sub>Load</sub> | <sub>Throughput</sub> | <sub>Response Time</sub> | <sub>Success Rate</sub> |
 |--------------|------|------------|---------------|--------------|
-| **Nominal Load** | 1K msgs/sec | 1.2K msgs/sec | 15ms avg | 100% |
-| **High Load** | 10K msgs/sec | 12K msgs/sec | 35ms avg | 99.99% |
-| **Peak Load** | 50K msgs/sec | 52K msgs/sec | 75ms avg | 99.95% |
-| **Stress Test** | 100K msgs/sec | 85K msgs/sec | 150ms avg | 99.8% |
-| **Endurance (24h)** | 25K msgs/sec | 25K msgs/sec | 45ms avg | 99.98% |
+| <sub>**Nominal Load**</sub> | <sub>1K msgs/sec</sub> | <sub>1.2K msgs/sec</sub> | <sub>15ms avg</sub> | <sub>100%</sub> |
+| <sub>**High Load**</sub> | <sub>10K msgs/sec</sub> | <sub>12K msgs/sec</sub> | <sub>35ms avg</sub> | <sub>99.99%</sub> |
+| <sub>**Peak Load**</sub> | <sub>50K msgs/sec</sub> | <sub>52K msgs/sec</sub> | <sub>75ms avg</sub> | <sub>99.95%</sub> |
+| <sub>**Stress Test**</sub> | <sub>100K msgs/sec</sub> | <sub>85K msgs/sec</sub> | <sub>150ms avg</sub> | <sub>99.8%</sub> |
+| <sub>**Endurance (24h)**</sub> | <sub>25K msgs/sec</sub> | <sub>25K msgs/sec</sub> | <sub>45ms avg</sub> | <sub>99.98%</sub> |
 
 ### Resource Usage Profiles
 
-| Deployment Size | CPU Cores | Memory (GB) | Storage (GB) | Network (Mbps) | Concurrent Users |
+| <sub>Deployment Size</sub> | <sub>CPU Cores</sub> | <sub>Memory (GB)</sub> | <sub>Storage (GB)</sub> | <sub>Network (Mbps)</sub> | <sub>Concurrent Users</sub> |
 |----------------|-----------|-------------|--------------|----------------|------------------|
-| **Development** | 4 | 8 | 100 | 100 | 10 |
-| **Small Production** | 8 | 16 | 500 | 500 | 100 |
-| **Medium Production** | 16 | 32 | 2000 | 1000 | 500 |
-| **Large Production** | 32 | 64 | 10000 | 5000 | 2000 |
-| **Enterprise** | 64+ | 128+ | 50000+ | 10000+ | 10000+ |
+| <sub>**Development**</sub> | <sub>4</sub> | <sub>8</sub> | <sub>100</sub> | <sub>100</sub> | <sub>10</sub> |
+| <sub>**Small Production**</sub> | <sub>8</sub> | <sub>16</sub> | <sub>500</sub> | <sub>500</sub> | <sub>100</sub> |
+| <sub>**Medium Production**</sub> | <sub>16</sub> | <sub>32</sub> | <sub>2000</sub> | <sub>1000</sub> | <sub>500</sub> |
+| <sub>**Large Production**</sub> | <sub>32</sub> | <sub>64</sub> | <sub>10000</sub> | <sub>5000</sub> | <sub>2000</sub> |
+| <sub>**Enterprise**</sub> | <sub>64+</sub> | <sub>128+</sub> | <sub>50000+</sub> | <sub>10000+</sub> | <sub>10000+</sub> |
 
 ## 🔒 Security Architecture
 
@@ -837,36 +837,36 @@ graph TB
 
 ### Security Control Implementation
 
-| NIST SP 800-53 Control | Implementation | Technology | Status |
+| <sub>NIST SP 800-53 Control</sub> | <sub>Implementation</sub> | <sub>Technology</sub> | <sub>Status</sub> |
 |------------------------|----------------|------------|--------|
-| **AC-2** (Account Management) | Role-based access control | FastAPI + JWT | ✅ Active |
-| **AC-3** (Access Enforcement) | Attribute-based permissions | RBAC middleware | ✅ Active |
-| **AU-2** (Audit Events) | Comprehensive logging | Structured JSON logs | ✅ Active |
-| **CM-8** (System Component Inventory) | SBOM generation | Syft + CycloneDX | ✅ Active |
-| **IA-2** (User Identification) | Multi-factor authentication | TOTP/HOTP support | ✅ Active |
-| **SC-8** (Transmission Confidentiality) | TLS 1.3 encryption | nginx + certificates | ✅ Active |
-| **SC-28** (Protection of Info at Rest) | AES-256 encryption | Database encryption | ✅ Active |
-| **SI-3** (Malicious Code Protection) | Container scanning | Trivy + Snyk | ✅ Active |
-| **SI-4** (System Monitoring) | Real-time monitoring | Prometheus + Grafana | 🟡 In Progress |
+| <sub>**AC-2** (Account Management)</sub> | <sub>Role-based access control</sub> | <sub>FastAPI + JWT</sub> | <sub>✅ Active</sub> |
+| <sub>**AC-3** (Access Enforcement)</sub> | <sub>Attribute-based permissions</sub> | <sub>RBAC middleware</sub> | <sub>✅ Active</sub> |
+| <sub>**AU-2** (Audit Events)</sub> | <sub>Comprehensive logging</sub> | <sub>Structured JSON logs</sub> | <sub>✅ Active</sub> |
+| <sub>**CM-8** (System Component Inventory)</sub> | <sub>SBOM generation</sub> | <sub>Syft + CycloneDX</sub> | <sub>✅ Active</sub> |
+| <sub>**IA-2** (User Identification)</sub> | <sub>Multi-factor authentication</sub> | <sub>TOTP/HOTP support</sub> | <sub>✅ Active</sub> |
+| <sub>**SC-8** (Transmission Confidentiality)</sub> | <sub>TLS 1.3 encryption</sub> | <sub>nginx + certificates</sub> | <sub>✅ Active</sub> |
+| <sub>**SC-28** (Protection of Info at Rest)</sub> | <sub>AES-256 encryption</sub> | <sub>Database encryption</sub> | <sub>✅ Active</sub> |
+| <sub>**SI-3** (Malicious Code Protection)</sub> | <sub>Container scanning</sub> | <sub>Trivy + Snyk</sub> | <sub>✅ Active</sub> |
+| <sub>**SI-4** (System Monitoring)</sub> | <sub>Real-time monitoring</sub> | <sub>Prometheus + Grafana</sub> | <sub>🟡 In Progress</sub> |
 
 ### Threat Model & Mitigations
 
-| Threat Category | Specific Threats | Mitigations | Risk Level |
+| <sub>Threat Category</sub> | <sub>Specific Threats</sub> | <sub>Mitigations</sub> | <sub>Risk Level</sub> |
 |----------------|------------------|-------------|------------|
-| **External Attacks** | DDoS, SQL injection, XSS | WAF, input validation, rate limiting | 🟡 Medium |
-| **Insider Threats** | Privilege escalation, data exfiltration | RBAC, audit logging, DLP | 🟡 Medium |
-| **Supply Chain** | Compromised dependencies | SBOM, vulnerability scanning | 🟢 Low |
-| **Infrastructure** | Container vulnerabilities | Image scanning, minimal base images | 🟢 Low |
-| **Data Breaches** | Unauthorized access | Encryption, access controls | 🟡 Medium |
+| <sub>**External Attacks**</sub> | <sub>DDoS, SQL injection, XSS</sub> | <sub>WAF, input validation, rate limiting</sub> | <sub>🟡 Medium</sub> |
+| <sub>**Insider Threats**</sub> | <sub>Privilege escalation, data exfiltration</sub> | <sub>RBAC, audit logging, DLP</sub> | <sub>🟡 Medium</sub> |
+| <sub>**Supply Chain**</sub> | <sub>Compromised dependencies</sub> | <sub>SBOM, vulnerability scanning</sub> | <sub>🟢 Low</sub> |
+| <sub>**Infrastructure**</sub> | <sub>Container vulnerabilities</sub> | <sub>Image scanning, minimal base images</sub> | <sub>🟢 Low</sub> |
+| <sub>**Data Breaches**</sub> | <sub>Unauthorized access</sub> | <sub>Encryption, access controls</sub> | <sub>🟡 Medium</sub> |
 
 ### Compliance & Certification Roadmap
 
-| Standard/Framework | Current Status | Target Date | Certification Body |
+| <sub>Standard/Framework</sub> | <sub>Current Status</sub> | <sub>Target Date</sub> | <sub>Certification Body</sub> |
 |-------------------|----------------|-------------|-------------------|
-| **NIST SP 800-53** | Baseline implemented | Q1 2026 | Internal audit |
-| **SOC 2 Type II** | Controls documented | Q2 2026 | External auditor |
-| **ISO 27001** | Gap analysis complete | Q3 2026 | Certification body |
-| **FedRAMP** | Pre-assessment | Q4 2026 | 3PAO |
+| <sub>**NIST SP 800-53**</sub> | <sub>Baseline implemented</sub> | <sub>Q1 2026</sub> | <sub>Internal audit</sub> |
+| <sub>**SOC 2 Type II**</sub> | <sub>Controls documented</sub> | <sub>Q2 2026</sub> | <sub>External auditor</sub> |
+| <sub>**ISO 27001**</sub> | <sub>Gap analysis complete</sub> | <sub>Q3 2026</sub> | <sub>Certification body</sub> |
+| <sub>**FedRAMP**</sub> | <sub>Pre-assessment</sub> | <sub>Q4 2026</sub> | <sub>3PAO</sub> |
 
 For security vulnerabilities, see [SECURITY.md](.github/SECURITY.md).
 
@@ -874,13 +874,13 @@ For security vulnerabilities, see [SECURITY.md](.github/SECURITY.md).
 
 ### Deployment Environments
 
-| Environment | Purpose | Infrastructure | Scaling | Data Retention |
+| <sub>Environment</sub> | <sub>Purpose</sub> | <sub>Infrastructure</sub> | <sub>Scaling</sub> | <sub>Data Retention</sub> |
 |-------------|---------|---------------|---------|----------------|
-| **Development** | Feature development | Docker Compose | Single node | 7 days |
-| **Testing** | Integration testing | Kubernetes (minikube) | 3 nodes | 30 days |
-| **Staging** | Pre-production validation | Kubernetes cluster | 5 nodes | 90 days |
-| **Production** | Live operations | Multi-AZ Kubernetes | 15+ nodes | 7 years |
-| **DR (Disaster Recovery)** | Business continuity | Geographic replica | 10 nodes | Full replica |
+| <sub>**Development**</sub> | <sub>Feature development</sub> | <sub>Docker Compose</sub> | <sub>Single node</sub> | <sub>7 days</sub> |
+| <sub>**Testing**</sub> | <sub>Integration testing</sub> | <sub>Kubernetes (minikube)</sub> | <sub>3 nodes</sub> | <sub>30 days</sub> |
+| <sub>**Staging**</sub> | <sub>Pre-production validation</sub> | <sub>Kubernetes cluster</sub> | <sub>5 nodes</sub> | <sub>90 days</sub> |
+| <sub>**Production**</sub> | <sub>Live operations</sub> | <sub>Multi-AZ Kubernetes</sub> | <sub>15+ nodes</sub> | <sub>7 years</sub> |
+| <sub>**DR (Disaster Recovery)**</sub> | <sub>Business continuity</sub> | <sub>Geographic replica</sub> | <sub>10 nodes</sub> | <sub>Full replica</sub> |
 
 ### Container Orchestration
 
@@ -946,13 +946,13 @@ graph TB
 
 ### Infrastructure as Code
 
-| Component | Tool | Configuration | Status |
+| <sub>Component</sub> | <sub>Tool</sub> | <sub>Configuration</sub> | <sub>Status</sub> |
 |-----------|------|---------------|--------|
-| **Container Orchestration** | Kubernetes | Helm charts | 🟡 In Progress |
-| **Infrastructure Provisioning** | Terraform | AWS/Azure/GCP | 🟡 Planned |
-| **Configuration Management** | Ansible | Playbooks | 🟡 Planned |
-| **Secret Management** | HashiCorp Vault | Kubernetes integration | 🟡 Planned |
-| **GitOps** | ArgoCD | Automated deployments | 🟡 Planned |
+| <sub>**Container Orchestration**</sub> | <sub>Kubernetes</sub> | <sub>Helm charts</sub> | <sub>🟡 In Progress</sub> |
+| <sub>**Infrastructure Provisioning**</sub> | <sub>Terraform</sub> | <sub>AWS/Azure/GCP</sub> | <sub>🟡 Planned</sub> |
+| <sub>**Configuration Management**</sub> | <sub>Ansible</sub> | <sub>Playbooks</sub> | <sub>🟡 Planned</sub> |
+| <sub>**Secret Management**</sub> | <sub>HashiCorp Vault</sub> | <sub>Kubernetes integration</sub> | <sub>🟡 Planned</sub> |
+| <sub>**GitOps**</sub> | <sub>ArgoCD</sub> | <sub>Automated deployments</sub> | <sub>🟡 Planned</sub> |
 
 ### Monitoring & Observability Stack
 
@@ -1022,14 +1022,14 @@ graph LR
 
 #### Workflow Phases Explained
 
-| Phase | Purpose | Activities | Quality Gates | Impact on Mission |
+| <sub>Phase</sub> | <sub>Purpose</sub> | <sub>Activities</sub> | <sub>Quality Gates</sub> | <sub>Impact on Mission</sub> |
 |-------|---------|------------|---------------|-------------------|
-| **Branch Creation** | Isolate new development | Create feature branch from main | Branch naming standards | 🔒 **Prevents main branch contamination** |
-| **Implementation** | Core feature development | Write production code, handle edge cases | Code review, security scan | 🚀 **Adds mission-critical functionality** |
-| **Testing** | Validate functionality | Unit tests, integration tests, performance tests | 90%+ coverage, performance benchmarks | 🛡️ **Ensures reliability under mission conditions** |
-| **Documentation** | Knowledge transfer | Update README, API docs, operational guides | Accuracy review, completeness check | 📚 **Enables team collaboration and maintenance** |
-| **Integration** | Merge to main | Pull request, automated CI/CD, deployment | All tests pass, security approval | ✅ **Delivers value to space operations** |
-| **Release** | Production deployment | Version tagging, changelog, monitoring | Health checks, rollback readiness | 🎯 **Supports active space missions** |
+| <sub>**Branch Creation**</sub> | <sub>Isolate new development</sub> | <sub>Create feature branch from main</sub> | <sub>Branch naming standards</sub> | <sub>🔒 **Prevents main branch contamination**</sub> |
+| <sub>**Implementation**</sub> | <sub>Core feature development</sub> | <sub>Write production code, handle edge cases</sub> | <sub>Code review, security scan</sub> | <sub>🚀 **Adds mission-critical functionality**</sub> |
+| <sub>**Testing**</sub> | <sub>Validate functionality</sub> | <sub>Unit tests, integration tests, performance tests</sub> | <sub>90%+ coverage, performance benchmarks</sub> | <sub>🛡️ **Ensures reliability under mission conditions**</sub> |
+| <sub>**Documentation**</sub> | <sub>Knowledge transfer</sub> | <sub>Update README, API docs, operational guides</sub> | <sub>Accuracy review, completeness check</sub> | <sub>📚 **Enables team collaboration and maintenance**</sub> |
+| <sub>**Integration**</sub> | <sub>Merge to main</sub> | <sub>Pull request, automated CI/CD, deployment</sub> | <sub>All tests pass, security approval</sub> | <sub>✅ **Delivers value to space operations**</sub> |
+| <sub>**Release**</sub> | <sub>Production deployment</sub> | <sub>Version tagging, changelog, monitoring</sub> | <sub>Health checks, rollback readiness</sub> | <sub>🎯 **Supports active space missions**</sub> |
 
 #### How Each Component Contributes to Mission Success
 
@@ -1063,22 +1063,22 @@ graph LR
 
 ### Contribution Guidelines
 
-| Contribution Type | Process | Requirements | Review Process |
+| <sub>Contribution Type</sub> | <sub>Process</sub> | <sub>Requirements</sub> | <sub>Review Process</sub> |
 |------------------|---------|--------------|----------------|
-| **Bug Fixes** | Issue → Fork → PR | Tests, documentation | 1 reviewer |
-| **Features** | RFC → Design → Implementation | Design doc, tests, docs | 2 reviewers |
-| **Documentation** | Direct PR | Accuracy, clarity | 1 reviewer |
-| **Security** | Private disclosure → Fix → CVE | Security review | Security team |
+| <sub>**Bug Fixes**</sub> | <sub>Issue → Fork → PR</sub> | <sub>Tests, documentation</sub> | <sub>1 reviewer</sub> |
+| <sub>**Features**</sub> | <sub>RFC → Design → Implementation</sub> | <sub>Design doc, tests, docs</sub> | <sub>2 reviewers</sub> |
+| <sub>**Documentation**</sub> | <sub>Direct PR</sub> | <sub>Accuracy, clarity</sub> | <sub>1 reviewer</sub> |
+| <sub>**Security**</sub> | <sub>Private disclosure → Fix → CVE</sub> | <sub>Security review</sub> | <sub>Security team</sub> |
 
 ### Code Quality Standards
 
-| Standard | Tool | Configuration | Enforcement |
+| <sub>Standard</sub> | <sub>Tool</sub> | <sub>Configuration</sub> | <sub>Enforcement</sub> |
 |----------|------|---------------|------------|
-| **Python Code Style** | Black + isort | pyproject.toml | Pre-commit hook |
-| **TypeScript/React** | ESLint + Prettier | .eslintrc.json | Pre-commit hook |
-| **API Documentation** | OpenAPI/Swagger | Automatic generation | CI/CD pipeline |
-| **Test Coverage** | pytest + coverage.py | 90% minimum | CI/CD gate |
-| **Security Scanning** | Bandit + Semgrep | Security rules | CI/CD pipeline |
+| <sub>**Python Code Style**</sub> | <sub>Black + isort</sub> | <sub>pyproject.toml</sub> | <sub>Pre-commit hook</sub> |
+| <sub>**TypeScript/React**</sub> | <sub>ESLint + Prettier</sub> | <sub>.eslintrc.json</sub> | <sub>Pre-commit hook</sub> |
+| <sub>**API Documentation**</sub> | <sub>OpenAPI/Swagger</sub> | <sub>Automatic generation</sub> | <sub>CI/CD pipeline</sub> |
+| <sub>**Test Coverage**</sub> | <sub>pytest + coverage.py</sub> | <sub>90% minimum</sub> | <sub>CI/CD gate</sub> |
+| <sub>**Security Scanning**</sub> | <sub>Bandit + Semgrep</sub> | <sub>Security rules</sub> | <sub>CI/CD pipeline</sub> |
 
 ### Community Resources
 
@@ -1101,15 +1101,15 @@ We welcome contributions! Please see our [Contributing Guide](.github/CONTRIBUTI
 
 ### Core Documentation
 
-| Document | Purpose | Audience | Status |
+| <sub>Document</sub> | <sub>Purpose</sub> | <sub>Audience</sub> | <sub>Status</sub> |
 |----------|---------|----------|--------|
-| [📐 Architecture Guide](docs/ARCHITECTURE.md) | System design and patterns | Architects, Senior Developers | ✅ Complete |
-| [🔌 API Documentation](docs/API.md) | REST API reference | Developers, Integrators | ✅ Complete |
-| [🛡️ Security Baseline](docs/SECURITY_BASELINE.md) | Security controls and compliance | Security Engineers, Auditors | ✅ Complete |
-| [🚀 Deployment Guide](docs/DEPLOYMENT.md) | Production deployment | DevOps Engineers, SREs | 🟡 In Progress |
-| [📋 Project Plan](docs/PROJECT_PLAN.md) | Development roadmap | Project Managers, Stakeholders | ✅ Complete |
-| [🧪 Testing Guide](docs/TESTING.md) | Test strategies and procedures | QA Engineers, Developers | 🟡 Planned |
-| [� Operations Runbook](docs/OPERATIONS.md) | Operational procedures | Operations Teams, SREs | 🟡 Planned |
+| <sub>[📐 Architecture Guide](docs/ARCHITECTURE.md)</sub> | <sub>System design and patterns</sub> | <sub>Architects, Senior Developers</sub> | <sub>✅ Complete</sub> |
+| <sub>[🔌 API Documentation](docs/API.md)</sub> | <sub>REST API reference</sub> | <sub>Developers, Integrators</sub> | <sub>✅ Complete</sub> |
+| <sub>[🛡️ Security Baseline](docs/SECURITY_BASELINE.md)</sub> | <sub>Security controls and compliance</sub> | <sub>Security Engineers, Auditors</sub> | <sub>✅ Complete</sub> |
+| <sub>[🚀 Deployment Guide](docs/DEPLOYMENT.md)</sub> | <sub>Production deployment</sub> | <sub>DevOps Engineers, SREs</sub> | <sub>🟡 In Progress</sub> |
+| <sub>[📋 Project Plan](docs/PROJECT_PLAN.md)</sub> | <sub>Development roadmap</sub> | <sub>Project Managers, Stakeholders</sub> | <sub>✅ Complete</sub> |
+| <sub>[🧪 Testing Guide](docs/TESTING.md)</sub> | <sub>Test strategies and procedures</sub> | <sub>QA Engineers, Developers</sub> | <sub>🟡 Planned</sub> |
+| <sub>[� Operations Runbook](docs/OPERATIONS.md)</sub> | <sub>Operational procedures</sub> | <sub>Operations Teams, SREs</sub> | <sub>🟡 Planned</sub> |
 
 ### Technical Specifications
 
@@ -1147,14 +1147,14 @@ graph LR
 
 ### Regulatory Compliance Framework
 
-| Standard | Scope | Implementation Status | Certification Target |
+| <sub>Standard</sub> | <sub>Scope</sub> | <sub>Implementation Status</sub> | <sub>Certification Target</sub> |
 |----------|-------|--------------------|---------------------|
-| **NIST SP 800-53** | Federal security baseline | ✅ Baseline implemented | Q1 2026 |
-| **FISMA** | Federal information security | 🟡 Controls documented | Q2 2026 |
-| **SOC 2 Type II** | Service organization controls | 🟡 Audit preparation | Q2 2026 |
-| **ISO 27001** | Information security management | 🟡 Gap analysis complete | Q3 2026 |
-| **ITAR** | International traffic in arms | 🟡 Assessment pending | TBD |
-| **FedRAMP** | Cloud security authorization | 🟡 Pre-assessment | Q4 2026 |
+| <sub>**NIST SP 800-53**</sub> | <sub>Federal security baseline</sub> | <sub>✅ Baseline implemented</sub> | <sub>Q1 2026</sub> |
+| <sub>**FISMA**</sub> | <sub>Federal information security</sub> | <sub>🟡 Controls documented</sub> | <sub>Q2 2026</sub> |
+| <sub>**SOC 2 Type II**</sub> | <sub>Service organization controls</sub> | <sub>🟡 Audit preparation</sub> | <sub>Q2 2026</sub> |
+| <sub>**ISO 27001**</sub> | <sub>Information security management</sub> | <sub>🟡 Gap analysis complete</sub> | <sub>Q3 2026</sub> |
+| <sub>**ITAR**</sub> | <sub>International traffic in arms</sub> | <sub>🟡 Assessment pending</sub> | <sub>TBD</sub> |
+| <sub>**FedRAMP**</sub> | <sub>Cloud security authorization</sub> | <sub>🟡 Pre-assessment</sub> | <sub>Q4 2026</sub> |
 
 ### Compliance Artifacts
 
@@ -1168,12 +1168,12 @@ graph LR
 
 ### Getting Help
 
-| Support Level | Channel | Response Time | Availability |
+| <sub>Support Level</sub> | <sub>Channel</sub> | <sub>Response Time</sub> | <sub>Availability</sub> |
 |---------------|---------|---------------|--------------|
-| **Community** | [GitHub Discussions](../../discussions) | Best effort | 24/7 |
-| **Bug Reports** | [GitHub Issues](../../issues) | 48 hours | Business hours |
-| **Security Issues** | `security@space-telemetry-ops.com` | 4 hours | 24/7 |
-| **Enterprise** | `enterprise@space-telemetry-ops.com` | 1 hour | 24/7 |
+| <sub>**Community**</sub> | <sub>[GitHub Discussions](../../discussions)</sub> | <sub>Best effort</sub> | <sub>24/7</sub> |
+| <sub>**Bug Reports**</sub> | <sub>[GitHub Issues](../../issues)</sub> | <sub>48 hours</sub> | <sub>Business hours</sub> |
+| <sub>**Security Issues**</sub> | <sub>`security@space-telemetry-ops.com`</sub> | <sub>4 hours</sub> | <sub>24/7</sub> |
+| <sub>**Enterprise**</sub> | <sub>`enterprise@space-telemetry-ops.com`</sub> | <sub>1 hour</sub> | <sub>24/7</sub> |
 
 ### Support Process
 
@@ -1185,13 +1185,13 @@ graph LR
 
 ### Community Statistics
 
-| Metric | Current | Target 2026 |
+| <sub>Metric</sub> | <sub>Current</sub> | <sub>Target 2026</sub> |
 |--------|---------|-------------|
-| **Contributors** | 15 | 100+ |
-| **Stars** | 250 | 1000+ |
-| **Forks** | 45 | 200+ |
-| **Issues Closed** | 85% | 90%+ |
-| **PR Response Time** | 24h | 12h |
+| <sub>**Contributors**</sub> | <sub>15</sub> | <sub>100+</sub> |
+| <sub>**Stars**</sub> | <sub>250</sub> | <sub>1000+</sub> |
+| <sub>**Forks**</sub> | <sub>45</sub> | <sub>200+</sub> |
+| <sub>**Issues Closed**</sub> | <sub>85%</sub> | <sub>90%+</sub> |
+| <sub>**PR Response Time**</sub> | <sub>24h</sub> | <sub>12h</sub> |
 
 ## 📄 License & Legal
 
@@ -1199,13 +1199,13 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 ### Third-Party Licenses
 
-| Component | License | Usage |
+| <sub>Component</sub> | <sub>License</sub> | <sub>Usage</sub> |
 |-----------|---------|--------|
-| React | MIT | Frontend framework |
-| FastAPI | MIT | Backend framework |
-| PostgreSQL | PostgreSQL | Database |
-| Redis | BSD | Cache/Queue |
-| Docker | Apache 2.0 | Containerization |
+| <sub>React</sub> | <sub>MIT</sub> | <sub>Frontend framework</sub> |
+| <sub>FastAPI</sub> | <sub>MIT</sub> | <sub>Backend framework</sub> |
+| <sub>PostgreSQL</sub> | <sub>PostgreSQL</sub> | <sub>Database</sub> |
+| <sub>Redis</sub> | <sub>BSD</sub> | <sub>Cache/Queue</sub> |
+| <sub>Docker</sub> | <sub>Apache 2.0</sub> | <sub>Containerization</sub> |
 
 ## 🏆 Acknowledgments & Credits
 
@@ -1225,12 +1225,12 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 ### Industry Partnerships
 
-| Partner | Contribution | Type |
+| <sub>Partner</sub> | <sub>Contribution</sub> | <sub>Type</sub> |
 |---------|--------------|------|
-| **Space Agencies** | Requirements, validation | Government |
-| **Aerospace Industry** | Integration, testing | Commercial |
-| **Universities** | Research, development | Academic |
-| **Open Source Projects** | Technology, community | Community |
+| <sub>**Space Agencies**</sub> | <sub>Requirements, validation</sub> | <sub>Government</sub> |
+| <sub>**Aerospace Industry**</sub> | <sub>Integration, testing</sub> | <sub>Commercial</sub> |
+| <sub>**Universities**</sub> | <sub>Research, development</sub> | <sub>Academic</sub> |
+| <sub>**Open Source Projects**</sub> | <sub>Technology, community</sub> | <sub>Community</sub> |
 
 ---
 
